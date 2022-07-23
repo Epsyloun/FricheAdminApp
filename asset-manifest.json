@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/Epsyloun/FricheAdminApp/static/css/main.bca5afbf.css",
-    "main.js": "/Epsyloun/FricheAdminApp/static/js/main.dbfde65c.js",
-    "index.html": "/Epsyloun/FricheAdminApp/index.html",
-    "main.bca5afbf.css.map": "/Epsyloun/FricheAdminApp/static/css/main.bca5afbf.css.map",
-    "main.dbfde65c.js.map": "/Epsyloun/FricheAdminApp/static/js/main.dbfde65c.js.map"
+    "main.css": "/FricheAdminApp/static/css/main.bca5afbf.css",
+    "main.js": "/FricheAdminApp/static/js/main.dbfde65c.js",
+    "index.html": "/FricheAdminApp/index.html",
+    "main.bca5afbf.css.map": "/FricheAdminApp/static/css/main.bca5afbf.css.map",
+    "main.dbfde65c.js.map": "/FricheAdminApp/static/js/main.dbfde65c.js.map"
   },
   "entrypoints": [
     "static/css/main.bca5afbf.css",
