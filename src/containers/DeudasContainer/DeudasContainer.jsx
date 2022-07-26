@@ -8,7 +8,7 @@ function DeudasContainer() {
     return (
     <div className="content-container">
         <Title
-            titleText="Buscar cliente"
+            titleText="Cobros"
         />
         <Buscador/>
         <ListDeuda/>

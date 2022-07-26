@@ -11,7 +11,7 @@ function CardDeuda({initial, title, info, subtitle}) {
     return (
     <>
     <Card className="orange-card" sx={{ display: 'flex' }}>
-        <CardActionArea  onClick={showOptions} sx={{color:'pink'}}>
+        <CardActionArea  onClick={showOptions} sx={{color:'hotpink'}}>
             <Box sx={{ display: 'flex', flexDirection: 'column', width:'100%'}}>
                 <CardContent sx={{padding:'5%', flex: '1 1 auto' }}>
                 <Stack spacing={2} direction="row" alignItems="center">

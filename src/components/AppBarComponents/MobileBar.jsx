@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 
@@ -10,6 +10,7 @@ import HomeIcon from '@mui/icons-material/Home';//INICIO
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';//DEUDAS
 import BorderColorIcon from '@mui/icons-material/BorderColor';//PEDIDOS
 import SettingsIcon from '@mui/icons-material/Settings';//AJUSTES
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 
 
 const VioletButton = {
@@ -38,15 +39,22 @@ const VioletButton = {
     }
   }
 
-function MobileBar({setPageIndex}) {
+function MobileBar({pageIndex,setPageIndex}) {
 
+
+    //handler page index
     const [value, setValue] = React.useState('recents');
+    function handlerPageIndex(index){
+      setPageIndex(index)
+    }
+
+
     const handleChange = (event, newValue) => {
-        setValue(newValue);
+          setValue(newValue);
     };
 
     return (
-        <Paper sx={{position: 'fixed', bottom: 0, left: 0, right: 0, zIndex:1, animation: 'fadeInDown ease 1s' }} elevation={3} >
+        <Paper sx={{position: 'fixed', bottom: 0, left: 0, right: 0, zIndex:2, animation: 'fadeInDown ease 1s' }} elevation={3} >
             <BottomNavigation sx={{ width: window.width }} value={value} onChange={handleChange}>
             <Fab sx={VioletButton} color="primary" aria-label="add">
                 <AddIcon  />
@@ -55,25 +63,30 @@ function MobileBar({setPageIndex}) {
                     value="recents"
                     icon={<HomeIcon />}
                     sx={OrangeText}
-                    onClick={event => setPageIndex(0)}
+                    onClick={event => handlerPageIndex(0)}
                 />
                 <BottomNavigationAction
                     value="favorites"
                     icon={<AttachMoneyIcon />}
                     sx={OrangeText}
-                    onClick={event => setPageIndex(1)}
+                    onClick={event => handlerPageIndex(1)}
                 />
                 <BottomNavigationAction
                     value="nearby"
                     icon={<BorderColorIcon />}
                     sx={OrangeText}
-                    onClick={event => setPageIndex(2)}
+                    onClick={event => handlerPageIndex(2)}
                 />
                 <BottomNavigationAction
                     value="folder"
-                    icon={<SettingsIcon />}
+                    icon={<MoreHorizIcon />}
                     sx={OrangeText}
-                    onClick={event => setPageIndex(7)}
+                    onClick={event => handlerPageIndex(7)}
+                />
+                <BottomNavigationAction
+                    value="outside"
+                    icon={<SettingsIcon />}
+                    sx={{display:"none"}}
                 />
             </BottomNavigation>
         </Paper>

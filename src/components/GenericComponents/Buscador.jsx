@@ -10,10 +10,7 @@ function Buscador() {
       }
     return (
         <Grid container sx={StyledContainer} spacing={1} mt="0.5em">
-                <Grid item xs={8}>
-                    <TextField fullWidth={true} id="outlined-basic" label="Nombre" variant="outlined" />
-                </Grid>
-                <Grid item xs={4}>
+            <Grid item xs={4}>
                     <Autocomplete
                         disablePortal
                         id="combo-box-deudas"
@@ -21,6 +18,9 @@ function Buscador() {
                         sx={{ width:  'auto' }}
                         renderInput={(params) => <TextField {...params} label="Filtro" />}
                     />
+                </Grid>
+                <Grid item xs={8}>
+                    <TextField fullWidth={true} id="outlined-basic" label="Nombre" variant="outlined" />
                 </Grid>
         </Grid>
      );

@@ -12,14 +12,17 @@ import SettingsIcon from '@mui/icons-material/Settings';//AJUSTES
 
 import GitHubIcon from '@mui/icons-material/GitHub';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import {Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Stack, Toolbar, Typography } from '@mui/material';
+import {Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Stack, Typography } from '@mui/material';
 import {UserInfoNav} from './UserInfoNav';
 
 
 
   //Appbar function
   function AppBarNav({pageIndex,setPageIndex}) {
-    console.log(pageIndex);
+        //handler page index
+        function handlerPageIndex(index){
+          setPageIndex(index)
+        }
         //AppBar config
           const drawerWidth = 240;
           return (
@@ -40,13 +43,11 @@ import {UserInfoNav} from './UserInfoNav';
                 <UserInfoNav />
                 <Divider />
                 <List>
-                  {['Inicio', 'Cobros','Pedidos','Inventario','Finanzas','Graficos','Ajustes'].map((text, index) => (
+                  {['Inicio', 'Cobros','Pedidos','Inventario','Finanzas','Estadisticas','Ajustes'].map((text, index) => (
                     <ListItem key={text} disablePadding sx={{color:"hotpink"}}>
                       <ListItemButton
-                      onClick={event => setPageIndex(index)}
+                      onClick={event => handlerPageIndex(index)}
                       >
-                        {/*TODO CREAR container finanzas*/}
-                        {/*TODO CREAR components finanzas*/}
                         <ListItemIcon sx={{color:"hotpink"}}>
                           {index === 0 &&  <HomeIcon/>}
                           {index === 1 &&  <AttachMoneyIcon/>}
@@ -62,7 +63,9 @@ import {UserInfoNav} from './UserInfoNav';
                   ))}
                 </List>
                 <Divider />
-                <Stack direction="row" marginTop={"auto"} justifyContent="space-evenly" spacing={2}>
+
+                <Stack marginTop="auto" direction="row" justifyContent="space-evenly" spacing={2}>
+
                     <IconButton href="https://github.com/Epsyloun" target="_blank">
                         <GitHubIcon sx={{color:'hotpink'}}/>
                     </IconButton>

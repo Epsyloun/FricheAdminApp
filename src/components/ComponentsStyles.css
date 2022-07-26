@@ -2,6 +2,9 @@
     .only-mobile-footer{
         height: 56px;
     }
+    .title-section {
+        text-align: center;
+      }
 }
 
 @media only screen and (min-width: 1300px){

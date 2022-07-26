@@ -1,5 +1,5 @@
 import React from 'react';
-import { Avatar, Button, Divider, Grid, IconButton, TextField, Typography } from "@mui/material";
+import { Avatar, Button, Divider, Grid, IconButton, Stack, TextField, Typography } from "@mui/material";
 import PhotoCamera from '@mui/icons-material/PhotoCamera';
 import UpdateIcon from '@mui/icons-material/Update';
 
@@ -22,11 +22,8 @@ function Ajustes({oldNombre, oldApellido, oldCorreo}) {
     const [correo, setCorreo] = React.useState('rodrigo.diaz8b@gmail.com');
     const [buttonDisabled, setButtonDisabled] = React.useState(false);
 
-    //TODO CREAR pantalla de Login
-
     function handlerNombre (event){
         setNombre(event.target.value);
-    console.log(buttonDisabled);
     }
     function handlerApellido (event){
         setApellido(event.target.value);
@@ -44,7 +41,6 @@ function Ajustes({oldNombre, oldApellido, oldCorreo}) {
     }
 
     return (
-
             <form className="orange-table">
             <Grid p={2} container sx={{background:"white", borderRadius:"20px", display:"flex", justifyContent:"center",alignItems:"center" }}>
                 <Grid p={2} item xs={12} md={4} sx={{display:"flex", flexDirection:'column', justifyContent:"center", alignItems:"center" }}>
