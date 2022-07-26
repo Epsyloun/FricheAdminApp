@@ -21,7 +21,7 @@ function FinanazasOptions() {
             <Box sx={{ display: 'flex', flexDirection: 'column', width:'100%', alignItems:"center", justifyContent: 'space-evenly',}}>
                 <CardContent sx={{width:"70%"}}>
                 <Typography color="hotpink" variant="h4" align="center" ml="2%">
-                    Dinero en caja
+                    Dinero en caja 
                 </Typography>
                 <TextField
                     fullWidth
