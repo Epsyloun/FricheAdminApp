@@ -1,11 +1,9 @@
 import React from 'react';
-import {MobileBar} from '../../components/AppBarComponents/MobileBar';
-import {useWidth} from '../../hooks/useWidth';
-import { AppBarNav } from '../../components/AppBarComponents/AppBar';
+import {MobileBar} from '../components/AppBarComponents/MobileBar';
+import {useWidth} from '../hooks/useWidth';
+import { AppBarNav } from '../components/AppBarComponents/AppBar';
 
 function AppBarContainer({pageIndex,setPageIndex}) {
-
-
 
     if(useWidth() >=1300)
     {

@@ -3,25 +3,43 @@ import { Button, Card, CardContent, Grid, Stack, TextField, Typography } from '@
 import PaidIcon from '@mui/icons-material/Paid';
 import { Box } from '@mui/system';
 
-const VioletButton = {
-    marginTop: '1em',
-    backgroundColor: 'blueviolet',
-    color: '#fff',
-    "&:focus": {
-      backgroundColor: 'blueViolet '
-    },
-    "&:hover": {
-      backgroundColor: 'DarkViolet'
+//Styled Components
+    const VioletButton = {
+        marginTop: '1em',
+        backgroundColor: 'hotpink',
+        color: '#fff',
+        "&:focus": {
+        backgroundColor: 'hotpink '
+        },
+        "&:hover": {
+        backgroundColor: 'DarkViolet'
+        }
+    };
+
+    const StyledCard = {
+        display: 'flex',
+        wrap:"wrap",
+        height:"100%"
+     }
+
+    const StyledBox = {
+        display: 'flex',
+        flexDirection: 'column',
+        width:'100%',
+        alignItems:"center",
+        justifyContent: 'space-evenly'
     }
-  };
+    const StyledCardContent ={width:"70%"}
+
+    const StyledInput = {marginTop:"0.5em",textAlign:"center"}
 
 function FinanazasOptions() {
     return (
-        <Card className="orange-card" sx={{ display: 'flex', wrap:"wrap", height:"100%" }}>
-            <Box sx={{ display: 'flex', flexDirection: 'column', width:'100%', alignItems:"center", justifyContent: 'space-evenly',}}>
-                <CardContent sx={{width:"70%"}}>
+        <Card className="styled-card" sx={StyledCard}>
+            <Box sx={StyledBox}>
+                <CardContent sx={StyledCardContent}>
                 <Typography color="hotpink" variant="h4" align="center" ml="2%">
-                    Dinero en caja 
+                    Dinero en caja
                 </Typography>
                 <TextField
                     fullWidth
@@ -32,7 +50,7 @@ function FinanazasOptions() {
                     InputLabelProps={{
                         shrink: true,
                     }}
-                    sx={{marginTop:"0.5em",textAlign:"center"}}
+                    sx={StyledInput}
                 />
                 <Stack alignItems="flex-end">
                     <Button sx={VioletButton} variant="contained" startIcon={<PaidIcon/>}>

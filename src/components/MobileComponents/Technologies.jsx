@@ -1,9 +1,16 @@
-import { Divider, Grid, Stack, Typography } from '@mui/material';
 import React from 'react'
+import { Divider, Grid, Stack, Typography } from '@mui/material';
+
+//StyledComponents
+    const StyledGrid = {
+        background:"white",
+        borderRadius:"20px",
+        animation: 'fade-in ease 0.5s'
+    }
 
 function Technologies() {
     return (
-        <Grid item mt="0.8em" p={2} xs={12} md={12} sx={{background:"white", borderRadius:"20px",animation: 'fade-in ease 1s'}}>
+        <Grid item mt="0.8em" p={2} xs={12} md={12} sx={StyledGrid}>
             <Typography variant="h5" align="center" ml="2%">
                 Tecnologias
             </Typography>
@@ -29,7 +36,6 @@ function Technologies() {
                         Material UI
                     </Typography>
                 </Stack>
-                <Divider/>
             </Stack>
         </Grid>
      );

@@ -4,15 +4,23 @@ import { Table, TableBody, TableContainer, TableHead, TablePagination, TableRow 
 import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import { styled } from '@mui/material/styles';
 
-const StyledTableCell = styled(TableCell)(({ theme }) => ({
-    [`&.${tableCellClasses.head}`]: {
-      backgroundColor: 'PaleVioletRed ',
-      color: theme.palette.common.white,
-    },
-    [`&.${tableCellClasses.body}`]: {
-      fontSize: 14,
-    },
-  }));
+//Styled Components
+  const StyledPaper ={
+    width: '100%',
+    overflow: 'hidden',
+    animation: 'fade-in-down ease 0.5s'
+  }
+  const StyledTableContainer = { maxHeight: 'auto' }
+
+  const StyledTableCell = styled(TableCell)(({ theme }) => ({
+      [`&.${tableCellClasses.head}`]: {
+        backgroundColor: 'PaleVioletRed ',
+        color: theme.palette.common.white,
+      },
+      [`&.${tableCellClasses.body}`]: {
+        fontSize: 16,
+      },
+    }));
 
   const StyledTableRow = styled(TableRow)(({ theme }) => ({
     '&:hover': {
@@ -25,12 +33,12 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
     },
   }));
 
+  //Handler table index
   function handlerTableClick(index){
     console.log(index);
   }
 
 function TableComponent({columns, rows}) {
-  console.log('tabla')
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
@@ -43,8 +51,8 @@ function TableComponent({columns, rows}) {
         setPage(0);
     };
     return (
-        <Paper className="orange-table" sx={{ width: '100%', overflow: 'hidden'}}>
-            <TableContainer sx={{ maxHeight: 'auto' }}>
+        <Paper sx={StyledPaper}>
+            <TableContainer sx={StyledTableContainer}>
             <Table stickyHeader aria-label="sticky table">
                 <TableHead >
                     <StyledTableRow>

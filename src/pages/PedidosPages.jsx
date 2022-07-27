@@ -1,5 +1,5 @@
 import React from 'react';
-import { PedidosContainer } from '../containers/PedidosContainer/PedidosContainer';
+import { PedidosContainer } from '../containers/PedidosContainer';
 
 function PedidosPages() {
 

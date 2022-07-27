@@ -11,6 +11,7 @@ import AttachMoneyIcon from '@mui/icons-material/AttachMoney';//DEUDAS
 import BorderColorIcon from '@mui/icons-material/BorderColor';//PEDIDOS
 import SettingsIcon from '@mui/icons-material/Settings';//AJUSTES
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import { ModalVenta } from '../GenericComponents/ModalVenta';
 
 
 const VioletButton = {
@@ -32,15 +33,24 @@ const VioletButton = {
       backgroundColor: 'blueViolet'
     }
   };
-  const OrangeText ={
+  const StyledText ={
     color: 'pink',
     "&.Mui-selected": {
       color: 'violet'
     }
   }
+  const StyledPaper = {
+    position: 'fixed',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    zIndex:2,
+    animation: 'fadeInDown ease 1s'
+   }
 
 function MobileBar({pageIndex,setPageIndex}) {
 
+    const [open, setOpen] = React.useState(false);
 
     //handler page index
     const [value, setValue] = React.useState('recents');
@@ -48,45 +58,41 @@ function MobileBar({pageIndex,setPageIndex}) {
       setPageIndex(index)
     }
 
-
     const handleChange = (event, newValue) => {
           setValue(newValue);
     };
+    const StyledBottom ={ width: window.width }
 
     return (
-        <Paper sx={{position: 'fixed', bottom: 0, left: 0, right: 0, zIndex:2, animation: 'fadeInDown ease 1s' }} elevation={3} >
-            <BottomNavigation sx={{ width: window.width }} value={value} onChange={handleChange}>
-            <Fab sx={VioletButton} color="primary" aria-label="add">
+        <Paper sx={StyledPaper} elevation={3} >
+            <BottomNavigation sx={StyledBottom} value={value} onChange={handleChange}>
+            <ModalVenta open={open} setOpen={setOpen}/>
+            <Fab onClick={()=>{setOpen(!open)}}  sx={VioletButton} color="primary" aria-label="add">
                 <AddIcon  />
             </Fab>
                 <BottomNavigationAction
                     value="recents"
                     icon={<HomeIcon />}
-                    sx={OrangeText}
+                    sx={StyledText}
                     onClick={event => handlerPageIndex(0)}
                 />
                 <BottomNavigationAction
-                    value="favorites"
+                    value="deudas"
                     icon={<AttachMoneyIcon />}
-                    sx={OrangeText}
+                    sx={StyledText}
                     onClick={event => handlerPageIndex(1)}
                 />
                 <BottomNavigationAction
-                    value="nearby"
+                    value="pedidos"
                     icon={<BorderColorIcon />}
-                    sx={OrangeText}
+                    sx={StyledText}
                     onClick={event => handlerPageIndex(2)}
                 />
                 <BottomNavigationAction
-                    value="folder"
+                    value="ajustes"
                     icon={<MoreHorizIcon />}
-                    sx={OrangeText}
+                    sx={StyledText}
                     onClick={event => handlerPageIndex(7)}
-                />
-                <BottomNavigationAction
-                    value="outside"
-                    icon={<SettingsIcon />}
-                    sx={{display:"none"}}
                 />
             </BottomNavigation>
         </Paper>

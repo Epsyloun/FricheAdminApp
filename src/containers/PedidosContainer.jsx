@@ -1,7 +1,7 @@
 import React from 'react';
-import {Buscador} from '../../components/GenericComponents/Buscador';
-import {TableComponent} from '../../components/GenericComponents/Table';
-import { Title } from '../../components/GenericComponents/Title';
+import {Buscador} from '../components/GenericComponents/Buscador';
+import {TableComponent} from '../components/GenericComponents/Table';
+import { Title } from '../components/GenericComponents/Title';
 function PedidosContainer() {
 
     function createData(nombre, fecha, total ) {
@@ -20,7 +20,7 @@ function PedidosContainer() {
     ];
 
     return (
-        <div  className="content-container">
+        <>
             <Title
                 titleText="Pedidos"
             />
@@ -29,7 +29,7 @@ function PedidosContainer() {
                 columns={columns}
                 rows={rows}
             />
-        </div >
+        </>
          );
 }
 

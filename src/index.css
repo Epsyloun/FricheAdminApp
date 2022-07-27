@@ -1,3 +1,83 @@
+
+/*diseño por breakpoints*/
+@media only screen and (max-width: 600px) {
+  .only-mobile-footer{
+    height: 56px;
+  }
+  .title-section {
+    text-align: center;
+  }
+  #main-container{
+      margin-left: 1em;
+      margin-right: 1em;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .only-mobile-footer{
+    height: 56px;
+  }
+  .title-section {
+    text-align: center;
+  }
+  #main-container{
+      margin-left: 1em;
+      margin-right: 1em;
+  }
+}
+@media only screen and (min-width: 900px) {
+  .only-mobile-footer{
+      height: 56px;
+  }
+  .title-section {
+    text-align: center;
+  }
+  #main-container{
+      margin-left: 1em;
+      margin-right: 1em;
+  }
+  .finanzas-settings{
+      order: 1;
+  }
+}
+
+@media only screen and (min-width: 1300px){
+  #main-container{
+      margin-left: calc(240px + 1em);
+      margin-right: 1em;
+  }
+  .finanzas-settings{
+      order: 1;
+  }
+  .only-mobile-footer{
+    height: 0px;
+  }
+  .footer-container{
+      margin-top: auto;
+      margin-left: 240px;
+  }
+}
+
+/*Diseño para todos los containers*/
+#main-container{
+  margin-top: 1em;
+  transition: ease 1s;
+}
+.big-container{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.camera-button{
+  position: absolute;
+  height: fit-content;
+  color: white !important;
+  padding: 0.6em !important;
+  left:2.5em;
+  bottom:2.5em;
+  background-color: blueviolet !important;
+  margin-bottom: -3rem !important;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -8,8 +88,127 @@ body {
   background-color: whitesmoke !important;
 }
 
+/*Diseño para componentes*/
+  .footer-container{
+    margin-top: auto;
+  }
+  .fecha-bloque{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    color: violet;
+  }
+  .MuiIcon-root.icon-card{
+    font-size: 3rem;
+    width: auto;
+    height: auto;
+    color: rgba(255, 192, 203, 1);
+    border-radius: 50%;
+    padding: 10%;
+    background:rgba(255, 192, 203, 0.24);
+    border: 3px dashed #ffc0cb;
+  }
+  .subtitle-card-green{
+    text-align: right;
+    color: rgb(112, 205, 50);
+  }
+  .title-section {
+    animation: blinker 1s linear;
+    animation-delay: 0.5s;
+  }
+  .subtitle-card-green{
+    text-align: right;
+    color: rgb(112, 205, 50);
+  }
+  .styled-card{
+    border-radius: 20px !important;
+    animation: fade-in-down ease 0.5s;
+  }.styled-card:hover{
+    margin: -3px;
+    border: 3px solid rgba(255, 192, 203, 1);
+    -webkit-box-shadow: 0px 5px 8px 5px rgba(255,192,203,0.6);
+    box-shadow: 0px 5px 8px 5px rgba(255,192,203,0.6);
+  }
+  .step-next{
+    animation:fadeIn ease 1s;
+    overflow: hidden;
+  }
+  .step-back{
+    animation:fadeIn ease 1s;
+    overflow: hidden;
+  }
 
+/*ScrollBar*/
+  /* width */
+  ::-webkit-scrollbar {
+    overflow: auto;
+    width: 8px;
+  }
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+  }
 
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #888;
+}
+
+/*Animaciones*/
+@keyframes fade-in {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+@keyframes blinker {
+  25% {opacity: 0;}
+  50% {opacity: 1;}
+  75% {opacity: 0;}
+}
+@keyframes fade-in-down {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -10%, 0);
+  }
+  to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes fade-in-left {
+ 0% {
+    opacity: 0;
+    transform: translate3d(-50%, 0, 0);
+ }
+ 100% {
+    opacity: 1 ;
+    transform: translate3d(0, 0, 0) ;
+ }
+}
+@keyframes fade-in-right {
+  0% {
+     opacity: 0;
+     transform: translate3d(50%, 0, 0);
+  }
+  100% {
+     opacity: 1 ;
+     transform: translate3d(0, 0, 0) ;
+  }
+}
+@keyframes fade-in-down {
+  0% {
+     opacity: 0;
+     transform: translate3d(0, 50%, 0);
+  }
+  100% {
+     opacity: 1 ;
+     transform: translate3d(0, 0, 0) ;
+  }
+}
+
+/*Codigo para mostrar errores*/
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

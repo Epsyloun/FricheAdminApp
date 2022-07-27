@@ -8,21 +8,36 @@ import Typography from '@mui/material/Typography';
 import Icon from '@mui/material/Icon';
 import { CardActionArea } from '@mui/material';
 
+//StyledComponents
+    const StyledActionCard = {
+        color:'hotpink',
+        display: 'flex',
+        wrap:"wrap",
+        height:"100%"
+    }
+
+    const StyledCardMedia = {
+        width:'50%',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+    }
+    const StyledBox = {
+        display: 'flex',
+        flexDirection: 'column',
+        width:'65%',
+        justifyContent: 'center'
+    }
+
 function HorizontalCard({image,title,info,subtitle}) {
     return (
-    <>
-        <Card className="orange-card">
-        <CardActionArea sx={{color:'hotpink',display: 'flex', wrap:"wrap", height:"100%" }}>
+        <Card className="styled-card">
+            <CardActionArea sx={StyledActionCard}>
                 <CardMedia
-                    sx={{
-                        width:'50%',
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        }}
+                    sx={StyledCardMedia}
                     children={ <Icon className='icon-card'>{image}</Icon>}
                 />
-                <Box sx={{ display: 'flex', flexDirection: 'column', width:'65%',  justifyContent: 'center',}}>
+                <Box sx={StyledBox}>
                     <CardContent >
                     <Typography variant="subtitle1" color="text.secondary" align='center' component="div">
                         {title}
@@ -37,7 +52,6 @@ function HorizontalCard({image,title,info,subtitle}) {
                 </Box>
             </CardActionArea>
         </Card>
-    </>
     );
 }
 

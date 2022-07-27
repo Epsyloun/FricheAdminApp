@@ -1,5 +1,7 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route, useNavigate} from 'react-router-dom'
+import '../index.css';
+
+import {Routes, Route, useNavigate} from 'react-router-dom'
 
 import {InicioPages} from '../pages/InicioPages';
 import {DeudasPages} from '../pages/DeudasPages';
@@ -9,9 +11,9 @@ import {GraficosPages} from '../pages/GraficosPages';
 import {InventarioPages} from '../pages/InventarioPages';
 import {AjustesPages} from '../pages/AjustesPages';
 import {MobilePages} from '../pages/MobilePages';
-import {AppBarContainer} from '../containers/AppBarContainer/AppBarContainer';
-import {FooterContainer} from '../containers/FooterContainer/FooterContainer';
-import '../containers/ContainersStyles.css';
+import {AppBarContainer} from '../containers/AppBarContainer';
+import {FooterContainer} from '../containers/FooterContainer';
+
 
 function MainContainer() {
      //Menu handler
@@ -36,6 +38,7 @@ function MainContainer() {
              }else if(pageIndex === 7){
                  navigate("/FricheAdminApp/mobilePages");
              }
+             //TODO hacer 404 y redireccionar al inicio
 
      },[pageIndex]);
     return (

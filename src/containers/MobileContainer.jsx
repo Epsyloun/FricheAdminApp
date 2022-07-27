@@ -1,10 +1,10 @@
 import React from 'react'
 import { Avatar, Divider, Grid, IconButton, List, ListItem, ListItemAvatar, ListItemText, Stack, Typography } from '@mui/material';
 
-import { Title } from '../../components/GenericComponents/Title';
-import { ExtraNav } from '../../components/MobileComponents/ExtraNav';
-import { SocialMedia } from '../../components/MobileComponents/SocialMedia';
-import { Technologies } from '../../components/MobileComponents/Technologies';
+import { Title } from '../components/GenericComponents/Title';
+import { ExtraNav } from '../components/MobileComponents/ExtraNav';
+import { SocialMedia } from '../components/MobileComponents/SocialMedia';
+import { Technologies } from '../components/MobileComponents/Technologies';
 
 function MobileContainer({pageIndex,setPageIndex}) {
 
@@ -27,4 +27,4 @@ function MobileContainer({pageIndex,setPageIndex}) {
      );
 }
 
-export default MobileContainer;
+export {MobileContainer};

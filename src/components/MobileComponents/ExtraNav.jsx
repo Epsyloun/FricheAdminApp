@@ -5,53 +5,63 @@ import WorkIcon from '@mui/icons-material/Work';//FINANZAS
 import SettingsIcon from '@mui/icons-material/Settings';//AJUSTES
 import { Avatar, Divider, Grid, List, ListItem, ListItemAvatar, ListItemText, Stack, Typography } from '@mui/material';
 
+//StyledComponents
+    const StyledGrid = {
+        background:"white",
+        borderRadius:"20px",
+        animation: 'fade-in ease 0.5s'
+    }
+    const StyledList = {width:"100%"}
+    const StyledText ={color:"hotpink"}
+    const StyledBackGround = {background:"hotpink"}
+
 function ExtraNav({pageIndex,setPageIndex}) {
     //handler page index
     function handlerPageIndex(index){
         setPageIndex(index)
       }
     return (
-        <Grid item p={2} xs={12} md={12} sx={{background:"white", borderRadius:"20px", animation: 'fade-in ease 1s'}}>
+        <Grid item p={2} xs={12} md={12} sx={StyledGrid}>
                 <Typography variant="h5" align="center" ml="2%">
                     Mas direcciones
                 </Typography>
                 <Divider/>
                 <Stack  display="flex" flexDirection="row" justifyContent="space-around" mt="0.5em">
-                <List component="nav" aria-label="mailbox folders" sx={{width:"100%"}}>
-                    <ListItem button sx={{color:"pink"}} onClick={event => handlerPageIndex(5)}>
+                <List component="nav" aria-label="mailbox folders" sx={StyledList}>
+                    <ListItem button sx={StyledText} onClick={event => handlerPageIndex(5)}>
                         <ListItemAvatar>
-                            <Avatar sx={{backgroundColor:"hotpink"}}>
+                            <Avatar sx={StyledBackGround}>
                                 <BarChartIcon/>
                             </Avatar>
                         </ListItemAvatar>
-                        <ListItemText sx={{color:'hotpink'}} primary="Estadistica" />
+                        <ListItemText sx={StyledText} primary="Estadistica" />
                     </ListItem>
-                    <Divider sx={{backgroundColor:"pink"}}/>
-                    <ListItem button sx={{color:"pink"}} onClick={event => handlerPageIndex(4)}>
+                    <Divider sx={StyledBackGround}/>
+                    <ListItem button sx={StyledText} onClick={event => handlerPageIndex(4)}>
                         <ListItemAvatar>
-                            <Avatar sx={{backgroundColor:"hotpink"}}>
+                            <Avatar sx={StyledBackGround}>
                                 <WorkIcon/>
                             </Avatar>
                         </ListItemAvatar>
-                        <ListItemText sx={{color:"hotpink"}} primary="Finanzas" />
+                        <ListItemText sx={StyledText} primary="Finanzas" />
                     </ListItem>
-                    <Divider sx={{backgroundColor:"pink"}}/>
-                    <ListItem button sx={{color:"pink"}} onClick={event => handlerPageIndex(3)}>
+                    <Divider sx={StyledBackGround}/>
+                    <ListItem button sx={StyledText} onClick={event => handlerPageIndex(3)}>
                         <ListItemAvatar>
-                            <Avatar sx={{backgroundColor:"hotpink"}}>
+                            <Avatar sx={StyledBackGround}>
                                 <InventoryIcon/>
                             </Avatar>
                         </ListItemAvatar>
-                        <ListItemText sx={{color:"hotpink"}} primary="Inventario" />
+                        <ListItemText sx={StyledText} primary="Inventario" />
                     </ListItem>
-                    <Divider sx={{backgroundColor:"pink"}}/>
-                    <ListItem button sx={{color:"pink"}} onClick={event => handlerPageIndex(6)}>
+                    <Divider sx={StyledBackGround}/>
+                    <ListItem button sx={StyledText} onClick={event => handlerPageIndex(6)}>
                         <ListItemAvatar>
-                            <Avatar sx={{backgroundColor:"hotpink"}}>
+                            <Avatar sx={StyledBackGround}>
                                 <SettingsIcon/>
                             </Avatar>
                         </ListItemAvatar>
-                        <ListItemText sx={{color:"hotpink"}} primary="Ajustes" />
+                        <ListItemText sx={StyledText} primary="Ajustes" />
                     </ListItem>
                     </List>
                 </Stack>

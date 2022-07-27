@@ -1,5 +1,5 @@
 import React from 'react'
-import {FinanzasContainer} from '../containers/FinanzasContainer/FinanzasContainer';
+import {FinanzasContainer} from '../containers/FinanzasContainer';
 
 function FinanzasPages() {
     return (

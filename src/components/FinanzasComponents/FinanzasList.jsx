@@ -2,6 +2,7 @@ import React from 'react';
 import { FinanzasVerticalCard } from '../../components/FinanzasComponents/FinanzasVerticalCard';
 import { Grid } from '@mui/material';
 import { FinanazasOptions } from './FinanzasOptions';
+
 function FinanzasList() {
     return (
     <>
