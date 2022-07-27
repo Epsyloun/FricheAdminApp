@@ -3,9 +3,7 @@ import {FinanzasContainer} from '../containers/FinanzasContainer';
 
 function FinanzasPages() {
     return (
-    <>
         <FinanzasContainer/>
-    </>
      );
 }
 
