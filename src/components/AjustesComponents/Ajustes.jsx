@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Avatar, Button, Divider, Grid, IconButton, TextField, Typography } from "@mui/material";
+import { Avatar, Button, Grid, IconButton, TextField } from "@mui/material";
 import PhotoCamera from '@mui/icons-material/PhotoCamera';
 import UpdateIcon from '@mui/icons-material/Update';
 
