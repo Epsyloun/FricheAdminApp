@@ -2,11 +2,22 @@ import React from 'react'
 import { Avatar, Card, CardActionArea, CardContent, Divider, Stack, Typography } from '@mui/material';
 
 //Styled Components
-const StyledText = {color:"hotpink"}
+const StyledCard = {
+    borderRadius: '20px',
+    animation: 'fade-in-down ease 0.5s',
+    height:'100%',
+    '&:hover':{
+    margin: '-3px',
+    border: '3px solid',
+    borderColor: 'secondary.main',
+  }
+}
+
+const StyledText = {color:"text.avatar"}
 
 const StyledCardContent={padding:'5%', flex: '1 1 auto' }
 
-const StyledAvatar = { bgcolor: 'hotpink', color:'white' }
+const StyledAvatar = { backgroundColor: 'text.avatar', color:'white' }
 
 function CardDeuda({initial, title, info, subtitle}) {
 
@@ -15,8 +26,7 @@ function CardDeuda({initial, title, info, subtitle}) {
         console.log('click');
     }
     return (
-    <>
-    <Card className="styled-card">
+    <Card sx={StyledCard}>
         <CardActionArea  onClick={showOptions} sx={StyledText}>
                 <CardContent sx={StyledCardContent}>
                     <Stack spacing={2} direction="row" alignItems="center">
@@ -35,7 +45,6 @@ function CardDeuda({initial, title, info, subtitle}) {
                 <Divider/>
         </CardActionArea>
     </Card>
-    </>
      );
 }
 

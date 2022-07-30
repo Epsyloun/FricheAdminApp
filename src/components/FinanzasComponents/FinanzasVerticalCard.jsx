@@ -14,11 +14,19 @@ sx={{overflow: "hidden", textOverflow: "ellipsis", width:'20rem'}}
 */
 
 //Styled Components
-    const StyledText = {color:"hotpink"}
+    const StyledText = {color:"text.accent"}
 
     const StyledCard = {
+        borderRadius: '20px',
+        animation: 'fade-in-down ease 0.5s',
         display: 'flex',
-        height:"100%"
+        wrap:"wrap",
+        height:"100%",
+        '&:hover':{
+        margin: '-3px',
+        border: '3px solid',
+        borderColor: 'secondary.main',
+        },
     }
     const StyledCardMedia = {
         width:'50%',
@@ -51,9 +59,9 @@ function FinanzasVerticalCard({image,title,info,subtitle}) {
                         </Typography>
                         <CardMedia
                             sx={StyledCardMedia}
-                            children={<Icon className='icon-card'>{image}</Icon>}
+                            children={<Icon color="secondary"  className='icon-card'>{image}</Icon>}
                         />
-                        <Typography noWrap={false} variant="h4" align='center'>
+                        <Typography color="text.primary"  noWrap={false} variant="h4" align='center'>
                             {info}
                         </Typography>
                         <Typography variant="subtitle2" className="subtitle-card-green" component="div" align='center'>

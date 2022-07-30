@@ -9,40 +9,50 @@ import Icon from '@mui/material/Icon';
 import { CardActionArea } from '@mui/material';
 
 //StyledComponents
+    const StyledCard = {
+            borderRadius: '20px',
+            animation: 'fade-in-down ease 0.5s',
+            height:'100%',
+            '&:hover':{
+            margin: '-3px',
+            border: '3px solid',
+            borderColor: 'secondary.main',
+          }
+    }
     const StyledActionCard = {
-        color:'hotpink',
         display: 'flex',
         wrap:"wrap",
         height:"100%"
     }
 
     const StyledCardMedia = {
-        width:'50%',
+        width:'35%',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
+
     }
     const StyledBox = {
         display: 'flex',
-        flexDirection: 'column',
+        flexDirection: 'row',
         width:'65%',
-        justifyContent: 'center'
+        justifyContent: 'center',
     }
 
 function HorizontalCard({image,title,info,subtitle}) {
     return (
-        <Card className="styled-card">
+        <Card sx={StyledCard}>
             <CardActionArea sx={StyledActionCard}>
                 <CardMedia
                     sx={StyledCardMedia}
-                    children={ <Icon className='icon-card'>{image}</Icon>}
+                    children={ <Icon color="secondary" className='icon-card'>{image}</Icon>}
                 />
                 <Box sx={StyledBox}>
                     <CardContent >
                     <Typography variant="subtitle1" color="text.secondary" align='center' component="div">
                         {title}
                     </Typography>
-                    <Typography component="div" variant="h4" align='center'>
+                    <Typography color="text" component="div" variant="h4" align='center'>
                         {info}
                     </Typography>
                     <Typography variant="subtitle2" className="subtitle-card-green"  component="div">

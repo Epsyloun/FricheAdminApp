@@ -10,9 +10,18 @@ function InventarioCard({title, image}) {
         display: 'flex',
         alignItems:"center",
         background:`url(${image}) no-repeat`,
-        objectFit:'cover'
+        objectFit:'cover',
+        height:"100%",
+        flexDirection:"column",
+        borderRadius: '20px',
+        animation: 'fade-in-down ease 0.5s',
+        '&:hover':{
+        margin: '-3px',
+        border: '3px solid',
+        borderColor: 'secondary.main',
+        }
     }
-    const StyledCardActionArea = {color:'pink',height:"200px",}
+    const StyledCardActionArea = {color:'text.accent',height:"200px",}
 
     const StyledBox = {
         display: 'flex',

@@ -21,7 +21,7 @@ function VentaModal({open, setOpen}) {
     left: '50%',
     transform: 'translate(-50%, -50%)',
     width: '80%',
-    bgcolor: 'background.paper',
+    backgroundColor: 'background.paper',
     borderRadius:"20px",
     boxShadow: 24,
     p: 4,

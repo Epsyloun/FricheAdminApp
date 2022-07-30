@@ -7,13 +7,16 @@ import { Avatar, Divider, Grid, List, ListItem, ListItemAvatar, ListItemText, St
 
 //StyledComponents
     const StyledGrid = {
-        background:"white",
+        backgroundColor:"background.paper",
         borderRadius:"20px",
-        animation: 'fade-in ease 0.5s'
+        animation: 'fade-in ease 0.5s',
+        display: 'flex',
+        height:"100%",
+        flexDirection:"column",
     }
     const StyledList = {width:"100%"}
-    const StyledText ={color:"hotpink"}
-    const StyledBackGround = {background:"hotpink"}
+    const StyledText ={color:"text.accent"}
+    const StyledBackGround = {backgroundColor:"text.accent"}
 
 function ExtraNav({pageIndex,setPageIndex}) {
     //handler page index
@@ -22,10 +25,10 @@ function ExtraNav({pageIndex,setPageIndex}) {
       }
     return (
         <Grid item p={2} xs={12} md={12} sx={StyledGrid}>
-                <Typography variant="h5" align="center" ml="2%">
+                <Typography color="text.secondary" variant="h5" align="center" ml="2%">
                     Mas direcciones
                 </Typography>
-                <Divider/>
+                <Divider />
                 <Stack  display="flex" flexDirection="row" justifyContent="space-around" mt="0.5em">
                 <List component="nav" aria-label="mailbox folders" sx={StyledList}>
                     <ListItem button sx={StyledText} onClick={event => handlerPageIndex(5)}>

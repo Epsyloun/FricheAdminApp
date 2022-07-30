@@ -70,10 +70,10 @@ import {UserInfoNav} from './UserInfoNav';
         <Divider />
         <Stack marginTop="auto" direction="row" justifyContent="space-evenly" spacing={2}>
           <IconButton href="https://github.com/Epsyloun" target="_blank">
-            <GitHubIcon sx={StyledText}/>
+            <GitHubIcon color="secondary"/>
           </IconButton>
           <IconButton href="https://www.instagram.com/frichesv/" target="_blank">
-            <InstagramIcon sx={StyledText}/>
+            <InstagramIcon color="secondary"/>
           </IconButton>
         </Stack>
       </Drawer>

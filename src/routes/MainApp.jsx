@@ -3,6 +3,8 @@ import '../index.css';
 
 import {Routes, Route, useNavigate} from 'react-router-dom'
 
+import Box from '@mui/material/Box';
+
 import {InicioPages} from '../pages/InicioPages';
 import {DeudasPages} from '../pages/DeudasPages';
 import {PedidosPages} from '../pages/PedidosPages';
@@ -16,6 +18,7 @@ import {FooterContainer} from '../containers/FooterContainer';
 
 
 function MainContainer() {
+
      //Menu handler
      const [pageIndex, setPageIndex] = React.useState(0);
      let navigate = useNavigate();
@@ -42,24 +45,24 @@ function MainContainer() {
 
      },[pageIndex]);
     return (
-        <>
+        <Box backgroundColor="background.default">
             <div className='big-container'>
                 <div id="main-container">
                     <AppBarContainer pageIndex={pageIndex} setPageIndex={setPageIndex}/>
                         <Routes>
-                            <Route  path="/FricheAdminApp/" element={<InicioPages/>}/>
-                            <Route  path="/FricheAdminApp/deudas" element={<DeudasPages/>}/>
-                            <Route exact path="/FricheAdminApp/pedidos" element={<PedidosPages/>}/>
-                            <Route exact path="/FricheAdminApp/finanzas" element={<FinanzasPages/>}/>
-                            <Route exact path="/FricheAdminApp/graficos" element={<GraficosPages/>}/>
-                            <Route exact path="/FricheAdminApp/inventario" element={<InventarioPages/>}/>
-                            <Route exact path="/FricheAdminApp/ajustes" element={<AjustesPages/>}/>
-                            <Route exact path="/FricheAdminApp/mobilePages" element={<MobilePages pageIndex={pageIndex} setPageIndex={setPageIndex}/>}/>
+                            <Route path="/FricheAdminApp/" element={<InicioPages/>}/>
+                            <Route path="/FricheAdminApp/deudas" element={<DeudasPages/>}/>
+                            <Route path="/FricheAdminApp/pedidos" element={<PedidosPages/>}/>
+                            <Route path="/FricheAdminApp/finanzas" element={<FinanzasPages/>}/>
+                            <Route path="/FricheAdminApp/graficos" element={<GraficosPages/>}/>
+                            <Route path="/FricheAdminApp/inventario" element={<InventarioPages/>}/>
+                            <Route path="/FricheAdminApp/ajustes" element={<AjustesPages/>}/>
+                            <Route path="/FricheAdminApp/mobilePages" element={<MobilePages pageIndex={pageIndex} setPageIndex={setPageIndex}/>}/>
                         </Routes>
                 </div>
                 <FooterContainer/>
             </div>
-        </>
+        </Box>
      );
 }
 

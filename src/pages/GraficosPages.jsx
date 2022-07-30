@@ -1,11 +1,10 @@
 import React from 'react'
+import { GraficosContainer } from '../containers/GraficosContainer';
 /*TODOCREAR Graficos container
 */
 function GraficosPages() {
     return (
-    <>
-    <h5>Hola soy Graficos</h5>
-    </>
+        <GraficosContainer/>
      );
 }
 

@@ -5,24 +5,27 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 
 //StyledComponents
     const StyledGrid = {
-        background:"white",
+        backgroundColor:"background.paper",
         borderRadius:"20px",
-        animation: 'fade-in ease 1s'
+        animation: 'fade-in ease 0.5s',
+        display: 'flex',
+        height:"100%",
+        flexDirection:"column",
     }
-    const StyledIcon = {color:'hotpink', fontSize:"2em"}
+    const StyledIcon = {fontSize:"2em"}
 
 function SocialMedia() {
     return (
         <Grid  item mt="0.8em" p={2} xs={12} md={12} sx={StyledGrid}>
-            <Typography variant="h5" align="center" ml="2%">
+            <Typography color="text.secondary" variant="h5" align="center" ml="2%">
                 Redes Sociales
             </Typography>
             <Divider/>
             <Stack  display="flex" flexDirection="row" justifyContent="space-around">
-            <IconButton href="https://github.com/Epsyloun" target="_blank">
+            <IconButton color="secondary" href="https://github.com/Epsyloun" target="_blank">
                 <GitHubIcon sx={StyledIcon}/>
             </IconButton>
-            <IconButton href="https://www.instagram.com/frichesv/" target="_blank">
+            <IconButton color="secondary" href="https://www.instagram.com/frichesv/" target="_blank">
                 <InstagramIcon sx={StyledIcon}/>
             </IconButton>
             </Stack>

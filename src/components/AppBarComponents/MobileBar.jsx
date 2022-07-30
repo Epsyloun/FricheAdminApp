@@ -21,17 +21,7 @@ const VioletButton = {
     left: '75%',
     right: 0,
     margin: '0 auto',
-    backgroundColor: 'violet',
-    color: '#fff',
     opacity:"0.8",
-    "&:focus": {
-      opacity: 1,
-      backgroundColor: 'blueViolet '
-    },
-    "&:hover": {
-      opacity: 1,
-      backgroundColor: 'blueViolet'
-    }
   };
   const StyledText ={
     color: 'pink',
@@ -67,7 +57,7 @@ function MobileBar({pageIndex,setPageIndex}) {
         <Paper sx={StyledPaper} elevation={3} >
             <BottomNavigation sx={StyledBottom} value={value} onChange={handleChange}>
             <ModalVenta open={open} setOpen={setOpen}/>
-            <Fab onClick={()=>{setOpen(!open)}}  sx={VioletButton} color="primary" aria-label="add">
+            <Fab onClick={()=>{setOpen(!open)}}  sx={VioletButton} color="secondary" aria-label="add">
                 <AddIcon  />
             </Fab>
                 <BottomNavigationAction

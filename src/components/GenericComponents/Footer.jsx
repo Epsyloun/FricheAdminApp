@@ -9,9 +9,8 @@ function Footer() {
         paddingTop:'2%',
         paddingBottom:'2%',
         width: '100%',
-        backgroundColor: 'LightPink',
     }
-    const StyledSecundaryBox ={
+    const StyledSecondaryBox ={
         width: '100%',
         backgroundColor: 'pink',
     }
@@ -20,13 +19,13 @@ function Footer() {
         <Grid  container sx={{ bottom: 0, left: 0, right: 0, alignText:'center',  animation: 'fadeInDown ease 1s'}} >
             <Grid item xs={12}>
                 <Box sx={StyledBox}>
-                    <Typography variant="h6" color="white" align="center">
+                    <Typography variant="h6" color="primary" align="center">
                         © 2022 Friche Derechos Reservados
                     </Typography>
                 </Box>
-                <Box sx={StyledSecundaryBox}>
+                <Box sx={StyledSecondaryBox}>
                 </Box>
-                <Box className="only-mobile-footer" sx={StyledSecundaryBox}/>
+                <Box className="only-mobile-footer" sx={StyledSecondaryBox}/>
             </Grid>
         </Grid>
     );

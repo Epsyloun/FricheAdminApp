@@ -9,12 +9,19 @@ import Icon from '@mui/material/Icon';
 import { CardActionArea } from '@mui/material';
 
 //Styled Components
-    const StyledText = {color:"hotpink"}
+    const StyledText = {color:"text.accent"}
 
     const StyledCard = {
+        borderRadius: '20px',
+        animation: 'fade-in-down ease 0.5s',
         display: 'flex',
         wrap:"wrap",
-        height:"100%"
+        height:"100%",
+        '&:hover':{
+            margin: '-3px',
+            border: '3px solid',
+            borderColor: 'secondary.main',
+            },
         }
     const StyledCardMedia = {
         width:'50%',
@@ -32,7 +39,7 @@ import { CardActionArea } from '@mui/material';
 
 function FinanzasHorizontalCard({image,title,info,subtitle}) {
     return (
-        <Card className="styled-card" sx={StyledCard}>
+        <Card sx={StyledCard}>
             <CardActionArea sx={StyledText}>
                 <CardMedia
                     sx={StyledCardMedia}

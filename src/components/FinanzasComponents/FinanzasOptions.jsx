@@ -4,22 +4,21 @@ import PaidIcon from '@mui/icons-material/Paid';
 import { Box } from '@mui/system';
 
 //Styled Components
-    const VioletButton = {
+    const marginButton= {
         marginTop: '1em',
-        backgroundColor: 'hotpink',
-        color: '#fff',
-        "&:focus": {
-        backgroundColor: 'hotpink '
-        },
-        "&:hover": {
-        backgroundColor: 'DarkViolet'
-        }
     };
 
     const StyledCard = {
+        borderRadius: '20px',
+        animation: 'fade-in-down ease 0.5s',
         display: 'flex',
         wrap:"wrap",
-        height:"100%"
+        height:"100%",
+        '&:hover':{
+        margin: '-3px',
+        border: '3px solid',
+        borderColor: 'secondary.main',
+        },
      }
 
     const StyledBox = {
@@ -53,7 +52,7 @@ function FinanazasOptions() {
                     sx={StyledInput}
                 />
                 <Stack alignItems="flex-end">
-                    <Button sx={VioletButton} variant="contained" startIcon={<PaidIcon/>}>
+                    <Button color="secondary" sx={marginButton} variant="contained" startIcon={<PaidIcon/>}>
                         Actualizar
                     </Button>
                 </Stack>

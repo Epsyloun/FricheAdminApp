@@ -1,19 +1,20 @@
 import React from 'react'
-import { Autocomplete, Grid, TextField} from '@mui/material';
+import { Autocomplete, Card, Grid, Paper, TextField} from '@mui/material';
 
 function Buscador() {
     //Styled Components
-    const StyledContainer={
+
+    const StyledPaper = {
         borderRadius:'20px',
         marginTop:"0.5em",
-        backgroundColor: 'white',
         padding:'2%',
         marginBottom:'2%',
-      }
+    }
     const OptionArray = ['Todo','Mayor a menor','Menor a mayor','Alfabetico','Ultima deuda']
     return (
-        <Grid container className="styled-card" sx={StyledContainer} spacing={1}>
-            <Grid item xs={4}>
+        <Card sx={StyledPaper}>
+            <Grid container spacing={1}>
+                <Grid item xs={4}>
                     <Autocomplete
                         disablePortal
                         id="combo-box-deudas"
@@ -25,7 +26,8 @@ function Buscador() {
                 <Grid item xs={8}>
                     <TextField fullWidth={true} id="outlined-basic" label="Nombre" variant="outlined" />
                 </Grid>
-        </Grid>
+            </Grid>
+        </Card>
      );
 }
 

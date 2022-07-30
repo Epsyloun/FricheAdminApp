@@ -7,16 +7,7 @@ import {ModalVenta} from '../../components/GenericComponents/ModalVenta'
     const StyledAddButton = {
     width:"fit-content",
     borderRadius:"20px",
-    color:"hotpink",
-    borderColor:"hotpink",
-    "&:focus": {
-        borderColor:"hotpink",
-      },
-      "&:hover": {
-        borderColor:"hotpink",
-      }
     }
-    const StyledBackground ={background:"lavenderblush"}
 
     const StyledAvatar = { width: '8em', height: '8em', objectFit:"cover" }
 
@@ -44,7 +35,7 @@ function UserInfoNav() {
     return (
         <>
             <ModalVenta open={open} setOpen={setOpen}/>
-            <Stack  direction="column" alignItems="Center" spacing={1} pt={6} pb={2} sx={StyledBackground}>
+            <Stack  direction="column" alignItems="Center" spacing={1} pt={6} pb={2}>
                 <Typography variant="subtitle1" color="black">
                     <Fecha/>
                 </Typography>
@@ -54,7 +45,7 @@ function UserInfoNav() {
                     sx={StyledAvatar}
                 />
             </Stack>
-            <Stack sx={{background:"lavenderblush"}} pb={2}>
+            <Stack pb={2}>
                 <Typography variant="h5" align="center">
                     Rodrigo Diaz
                 </Typography>
@@ -62,7 +53,7 @@ function UserInfoNav() {
                     rodrigo.diaz8b@gmail.com
                 </Typography>
                 <Stack display="flex" alignItems="center" mt="0.5em">
-                    <Button onClick={()=>{setOpen(!open)}} sx={StyledAddButton} startIcon={<AddIcon />} variant="outlined">Nueva venta</Button>
+                    <Button onClick={()=>{setOpen(!open)}} color="secondary" sx={StyledAddButton} startIcon={<AddIcon />} variant="outlined">Nueva venta</Button>
                 </Stack>
             </Stack>
         </>
