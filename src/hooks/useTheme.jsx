@@ -1,24 +1,25 @@
-import React from 'react';
+import React ,{useState,useEffect} from 'react';
 
 const useThemeDetector = () => {
     const getCurrentTheme = () => window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const [isDarkTheme, setIsDarkTheme] = React.useState(getCurrentTheme());
+    const [isDarkTheme, setIsDarkTheme] = useState(getCurrentTheme());
     const mqListener = (e => {
         setIsDarkTheme(e.matches);
     });
 
-    React.useEffect(() => {
+    useEffect(() => {
       const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
-      darkThemeMq(mqListener);
-      return () => darkThemeMq(mqListener);
+      darkThemeMq.addListener(mqListener);
+      return () => darkThemeMq.removeListener(mqListener);
     }, []);
     return isDarkTheme;
 }
 
-const themeColor = (useThemeDetector ? "dark":"light");
-
 function useTheme() {
 
+    const isDarkTheme = useThemeDetector();
+    const [themeColor, setThemeColor] = useState(isDarkTheme ? "dark": "light");
+    console.log(themeColor);
     const theme = {
         palette:{
                 mode:themeColor,
