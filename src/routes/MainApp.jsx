@@ -18,7 +18,9 @@ import {FooterContainer} from '../containers/FooterContainer';
 
 
 function MainContainer() {
+    //Styled components
 
+    const StyledBigContainer = {backgroundColor:"background.container"}
      //Menu handler
      const [pageIndex, setPageIndex] = React.useState(0);
      let navigate = useNavigate();

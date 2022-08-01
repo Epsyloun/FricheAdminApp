@@ -11,6 +11,7 @@ import {ModalVenta} from '../../components/GenericComponents/ModalVenta'
 
     const StyledAvatar = { width: '8em', height: '8em', objectFit:"cover" }
 
+    const StyledBackground = {backgroundColor:"background.container"}
 
     //Arreglo de meses
     const monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
@@ -24,9 +25,9 @@ import {ModalVenta} from '../../components/GenericComponents/ModalVenta'
     const mes = monthNames[fecha.getMonth()];
     const ano = fecha.getFullYear()
     return (
-        <div className='fecha-bloque header-style'>
-            <span className='fecha'>{diaf} {mes} {ano}</span>
-        </div>
+        <Typography variant='subtitle1' color='text.accent'>
+            {diaf} {mes} {ano}
+        </Typography>
     );
     }
 
@@ -35,17 +36,15 @@ function UserInfoNav() {
     return (
         <>
             <ModalVenta open={open} setOpen={setOpen}/>
-            <Stack  direction="column" alignItems="Center" spacing={1} pt={6} pb={2}>
-                <Typography variant="subtitle1" color="black">
-                    <Fecha/>
-                </Typography>
+            <Stack sx={StyledBackground} direction="column" alignItems="Center" spacing={1} pt={6} pb={2}>
+                <Fecha/>
                 <Avatar
                     alt="User Photo"
                     src="https://i.pinimg.com/736x/e7/0a/4c/e70a4c9a51ed64b04f71bbae16a9d91b.jpg"
                     sx={StyledAvatar}
                 />
             </Stack>
-            <Stack pb={2}>
+            <Stack pb={2} sx={StyledBackground}>
                 <Typography variant="h5" align="center">
                     Rodrigo Diaz
                 </Typography>

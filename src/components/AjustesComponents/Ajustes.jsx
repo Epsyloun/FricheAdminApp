@@ -28,6 +28,7 @@ import UpdateIcon from '@mui/icons-material/Update';
         width: '10em',
         height: '10em'
     }
+    const StyledIcon = {color:'white'}
 
 function Ajustes({oldNombre, oldApellido, oldCorreo}) {
 
@@ -64,7 +65,7 @@ function Ajustes({oldNombre, oldApellido, oldCorreo}) {
                     src="https://i.pinimg.com/736x/e7/0a/4c/e70a4c9a51ed64b04f71bbae16a9d91b.jpg"
                     sx={StyledImage}
                 />
-                <IconButton className='camera-button' color="primary" aria-label="upload picture" component="label">
+                <IconButton className='camera-button' sx={StyledIcon} aria-label="upload picture" component="label">
                             <input hidden accept="image/*" type="file" />
                             <PhotoCamera />
                 </IconButton>

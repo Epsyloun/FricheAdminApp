@@ -39,7 +39,7 @@ import { CardActionArea } from '@mui/material';
         justifyContent: 'center',
     }
 
-function HorizontalCard({image,title,info,subtitle}) {
+function HorizontalCard({image,title,info,subtitle, subtitle2}) {
     return (
         <Card sx={StyledCard}>
             <CardActionArea sx={StyledActionCard}>
@@ -57,6 +57,9 @@ function HorizontalCard({image,title,info,subtitle}) {
                     </Typography>
                     <Typography variant="subtitle2" className="subtitle-card-green"  component="div">
                         {subtitle}
+                    </Typography>
+                    <Typography variant="subtitle2" className="subtitle-card-red"  component="div">
+                        {subtitle2}
                     </Typography>
                     </CardContent>
                 </Box>

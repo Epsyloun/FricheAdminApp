@@ -3,9 +3,10 @@ import React from 'react'
 import { HorizontalCard } from '../GenericComponents/HorizontalCard';
 import { VerticalCard } from '../GenericComponents/VerticalCard';
 import { GraficosTemplate } from '../GraficosComponents/GraficosTemplate';
+import { useTheme } from '../../hooks/useTheme';
 
  function HomeList() {
-
+  const colors = useTheme()
     const data = {
         labels: [
             'Lunes',
@@ -18,7 +19,7 @@ import { GraficosTemplate } from '../GraficosComponents/GraficosTemplate';
           ],
         datasets: [{
           label: 'Suma de ventas por dia',
-          backgroundColor: 'rgb(255, 99, 132)',
+          backgroundColor: colors.palette.secondary.main,
           borderColor: 'rgb(255, 99, 132)',
           data: [5, 10, 5, 2, 20, 30, 45],
         }]
@@ -31,10 +32,11 @@ import { GraficosTemplate } from '../GraficosComponents/GraficosTemplate';
           'Dulce'
         ],
         datasets: [{
+          borderColor:'transparent',
           label: 'Producto',
           data: [300, 50, 100],
           backgroundColor: [
-            'rgb(255, 99, 132)',
+            colors.palette.secondary.main,
             'rgba(255, 205, 86)',
             'skyblue'
           ],
@@ -54,8 +56,8 @@ import { GraficosTemplate } from '../GraficosComponents/GraficosTemplate';
           ],
         datasets: [{
           label: 'Suma de entas mensuales',
-          backgroundColor: 'rgb(255, 99, 132)',
-          borderColor: 'rgb(255, 99, 132)',
+          backgroundColor: colors.palette.secondary.main,
+          borderColor: colors.palette.secondary.main,
           data: [5, 0, 5, 2, 20, 45, 30],
         }]
       };
@@ -84,7 +86,7 @@ import { GraficosTemplate } from '../GraficosComponents/GraficosTemplate';
                             image={'money_off'}
                             title={'Producto menos vendida'}
                             info={'Salados'}
-                            subtitle={'0% de las ventas'}
+                            subtitle2={'0% de las ventas'}
                         />
 
             </Grid>
@@ -93,7 +95,7 @@ import { GraficosTemplate } from '../GraficosComponents/GraficosTemplate';
                             image={'trending_down'}
                             title={'Categoria menos vendida'}
                             info={'Picante'}
-                            subtitle={'12% de las ventas'}
+                            subtitle2={'12% de las ventas'}
                         />
 
             </Grid>

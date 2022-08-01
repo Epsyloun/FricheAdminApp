@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { makeStyles } from "@mui/styles";
 
 //New icons
 import HomeIcon from '@mui/icons-material/Home';//INICIO
@@ -11,8 +12,10 @@ import SettingsIcon from '@mui/icons-material/Settings';//AJUSTES
 
 import GitHubIcon from '@mui/icons-material/GitHub';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import {Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Stack, Typography } from '@mui/material';
+import {Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Stack } from '@mui/material';
 import {UserInfoNav} from './UserInfoNav';
+import { useTheme } from '../../hooks/useTheme';
+
 
   //AppBar config
   const drawerWidth = 240;
@@ -25,13 +28,23 @@ import {UserInfoNav} from './UserInfoNav';
       width: drawerWidth,
       boxSizing: 'border-box',
       animation: 'fadeInLeft ease 1s'
-    }
+    },
+
   }
-  const StyledText = {color:"hotpink"}
+  const StyledText = {color:"text.accent"}
 
   //Appbar function
   function AppBarNav({pageIndex,setPageIndex}) {
 
+    const theme = useTheme();
+
+    const useStyles = makeStyles({
+      paper: {
+        backgroundColor: theme.palette.background.default + '!important'
+      }
+    });
+
+    const classes = useStyles();
 
     //handler page index
     function handlerPageIndex(index){
@@ -40,14 +53,14 @@ import {UserInfoNav} from './UserInfoNav';
 
     return (
       <Drawer
-        className='side-nav'
+          classes={{ paper: classes.paper }}
           sx={StyledDrawer}
           variant="permanent"
           anchor="left"
         >
         <UserInfoNav />
         <Divider />
-        <List>
+        <List >
           {['Inicio', 'Cobros','Pedidos','Inventario','Finanzas','Estadisticas','Ajustes'].map((text, index) => (
             <ListItem key={text} disablePadding sx={StyledText}>
               <ListItemButton
@@ -68,14 +81,14 @@ import {UserInfoNav} from './UserInfoNav';
           ))}
         </List>
         <Divider />
-        <Stack marginTop="auto" direction="row" justifyContent="space-evenly" spacing={2}>
-          <IconButton href="https://github.com/Epsyloun" target="_blank">
-            <GitHubIcon color="secondary"/>
-          </IconButton>
-          <IconButton href="https://www.instagram.com/frichesv/" target="_blank">
-            <InstagramIcon color="secondary"/>
-          </IconButton>
-        </Stack>
+          <Stack marginTop="auto" direction="row" justifyContent="space-evenly" spacing={2} >
+            <IconButton href="https://github.com/Epsyloun" target="_blank">
+              <GitHubIcon color="secondary"/>
+            </IconButton>
+            <IconButton href="https://www.instagram.com/frichesv/" target="_blank">
+              <InstagramIcon color="secondary"/>
+            </IconButton>
+          </Stack>
       </Drawer>
     );
 }

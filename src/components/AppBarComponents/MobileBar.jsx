@@ -24,9 +24,9 @@ const VioletButton = {
     opacity:"0.8",
   };
   const StyledText ={
-    color: 'pink',
+    color: 'text.icon',
     "&.Mui-selected": {
-      color: 'violet'
+      color: 'secondary.main'
     }
   }
   const StyledPaper = {

@@ -19,7 +19,6 @@ function useTheme() {
 
     const isDarkTheme = useThemeDetector();
     const [themeColor, setThemeColor] = useState(isDarkTheme ? "dark": "light");
-    console.log(themeColor);
     const theme = {
         palette:{
                 mode:themeColor,
@@ -28,7 +27,22 @@ function useTheme() {
                         main:'#FF8FB1',
                     },
                     secondary:{
-                        main:"#7A4495"
+                        main:"#8A2BE2",
+                        headTable:'#9370DB'
+                    },
+                    text:{
+                        accent:'#8A2BE2',
+                        avatar:'#9370DB',
+                        icon:'#DDA0DD'
+                    },
+                    background:{
+                        paper:'white',
+                        default:'whitesmoke',
+                        container:'lavender',
+                        tableHead:'#8A2BE2'
+                    },
+                    shadow:{
+                        main:'rgba(255, 99, 132,0.6)'
                     }
                 }:{
                     primary:{
@@ -45,7 +59,7 @@ function useTheme() {
                     background:{
                         paper:'#270c35',
                         default:'#1e1e1e',
-                        container:'#1e1e1e'
+                        container:'#270c35'
                     },
                     shadow:{
                         main:'rgba(255, 99, 132,0.6)'

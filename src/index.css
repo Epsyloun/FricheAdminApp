@@ -89,14 +89,6 @@ body {
   .footer-container{
     margin-top: auto;
   }
-  .fecha-bloque{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    color: violet;
-  }
   .MuiIcon-root.icon-card{
     font-size: 3rem;
     width: auto;
@@ -110,6 +102,10 @@ body {
   .subtitle-card-green{
     text-align: right;
     color: rgb(112, 205, 50);
+  }
+  .subtitle-card-red{
+    text-align: right;
+    color: rgb(205, 50, 102);
   }
   .title-section {
     animation: blinker 1s linear;
