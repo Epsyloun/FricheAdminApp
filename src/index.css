@@ -197,3 +197,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Pruebas de codigo
+:root{
+
+}
+.styled-card{
+  background-color: red !important;
+}
+@media (prefers-color-scheme: dark) {
+  .styled-card{
+    background-color: blue !important;
+  }
+} */

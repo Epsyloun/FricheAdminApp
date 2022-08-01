@@ -15,7 +15,7 @@ import {ModalVenta} from '../../components/GenericComponents/ModalVenta'
 
     //Arreglo de meses
     const monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
-    "Julio", "Augosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+    "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
     ];
 
     //Componente de fecha

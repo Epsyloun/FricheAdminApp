@@ -9,16 +9,22 @@ const useThemeDetector = () => {
 
     useEffect(() => {
       const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
-      darkThemeMq.addListener(mqListener);
-      return () => darkThemeMq.removeListener(mqListener);
+        darkThemeMq.addEventListener("change", (e) => {
+            mqListener(e);
+        });
+        return () => {darkThemeMq.removeEventListener("change", () => {
+            mqListener();
+        });}
     }, []);
     return isDarkTheme;
 }
 
 function useTheme() {
-
     const isDarkTheme = useThemeDetector();
     const [themeColor, setThemeColor] = useState(isDarkTheme ? "dark": "light");
+    useEffect(()=>{
+        setThemeColor(isDarkTheme ? "dark": "light")
+    },[isDarkTheme])
     const theme = {
         palette:{
                 mode:themeColor,

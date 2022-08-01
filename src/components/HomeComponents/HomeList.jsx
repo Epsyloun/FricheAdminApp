@@ -7,6 +7,7 @@ import { useTheme } from '../../hooks/useTheme';
 
  function HomeList() {
   const colors = useTheme()
+
     const data = {
         labels: [
             'Lunes',
@@ -42,25 +43,25 @@ import { useTheme } from '../../hooks/useTheme';
           ],
           hoverOffset: 8
         }]
-      };
+    };
 
-      const data3 = {
-        labels: [
-            'Enero',
-            'Febrero',
-            'Marzo',
-            'Abril',
-            'Mayo',
-            'Junio',
-            'Julio'
-          ],
-        datasets: [{
-          label: 'Suma de entas mensuales',
-          backgroundColor: colors.palette.secondary.main,
-          borderColor: colors.palette.secondary.main,
-          data: [5, 0, 5, 2, 20, 45, 30],
-        }]
-      };
+    const data3 = {
+      labels: [
+          'Enero',
+          'Febrero',
+          'Marzo',
+          'Abril',
+          'Mayo',
+          'Junio',
+          'Julio'
+        ],
+      datasets: [{
+        label: 'Suma de entas mensuales',
+        backgroundColor: colors.palette.secondary.main,
+        borderColor: colors.palette.secondary.main,
+        data: [5, 0, 5, 2, 20, 45, 30],
+      }]
+    };
 
     return (
         <Grid container spacing={2} display="flex" alignItems="stretch" mt={0}>
