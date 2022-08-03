@@ -1,74 +1,24 @@
 import React from 'react';
 import { Grid } from '@mui/material';
 import {CardDeuda} from './CardDeuda';
+import {DeudasArray} from './DeudasArray'
 
 function ListDeuda() {
+    const Deudas = DeudasArray()
     return (
         <Grid container spacing={2} direction="row" justifyContent="center" alignItems="flex-start">
-                <Grid item xs={12} md={4}>
+            {Deudas.map((deudas) =>
+
+                <Grid item xs={12} md={4} key={deudas.id}>
                     <CardDeuda
-                        initial={'R'}
-                        title={'Rodrigo Diaz'}
-                        info={'5.55'}
-                        subtitle={'22/06/22'}
+                        initial={deudas.inicial}
+                        title={deudas.nombre +' '+ deudas.apellido}
+                        info={deudas.monto}
+                        subtitle={deudas.fecha}
                     />
                 </Grid>
-                <Grid item xs={12} md={4}>
-                    <CardDeuda
-                        initial={'R'}
-                        title={'Rodrigo Diaz'}
-                        info={'5.55'}
-                        subtitle={'22/06/22'}
-                    />
-                </Grid>
-                <Grid item xs={12} md={4}>
-                    <CardDeuda
-                        initial={'R'}
-                        title={'Rodrigo Diaz'}
-                        info={'5.55'}
-                        subtitle={'22/06/22'}
-                    />
-                </Grid>
-                <Grid item xs={12} md={4}>
-                    <CardDeuda
-                        initial={'R'}
-                        title={'Rodrigo Diaz'}
-                        info={'5.55'}
-                        subtitle={'22/06/22'}
-                    />
-                </Grid>
-                <Grid item xs={12} md={4}>
-                    <CardDeuda
-                        initial={'R'}
-                        title={'Rodrigo Diaz'}
-                        info={'5.55'}
-                        subtitle={'22/06/22'}
-                    />
-                </Grid>
-                <Grid item xs={12} md={4}>
-                    <CardDeuda
-                        initial={'R'}
-                        title={'Rodrigo Diaz'}
-                        info={'5.55'}
-                        subtitle={'22/06/22'}
-                    />
-                </Grid>
-                <Grid item xs={12} md={4}>
-                    <CardDeuda
-                        initial={'R'}
-                        title={'Rodrigo Diaz'}
-                        info={'5.55'}
-                        subtitle={'22/06/22'}
-                    />
-                </Grid>
-                <Grid item xs={12} md={4}>
-                    <CardDeuda
-                        initial={'R'}
-                        title={'Rodrigo Diaz'}
-                        info={'5.55'}
-                        subtitle={'22/06/22'}
-                    />
-                </Grid>
+            )}
+
             </Grid>
      );
 }

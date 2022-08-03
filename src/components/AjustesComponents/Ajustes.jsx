@@ -21,8 +21,8 @@ import UpdateIcon from '@mui/icons-material/Update';
         alignItems:"center"
     }
     const StyledTextfield = {
-        marginTop:"10px",
-        marginBottom:"10px"
+        margin:"10px",
+        width:'94%'
     }
     const StyledImage={
         width: '10em',
@@ -70,10 +70,10 @@ function Ajustes({oldNombre, oldApellido, oldCorreo}) {
                             <PhotoCamera />
                 </IconButton>
             </Grid>
-            <Grid item xs={12} md={8}>
-                    <TextField sx={StyledTextfield} fullWidth label="Nombre" variant="outlined" value={nombre} onChange={handlerNombre} onKeyUp={handlerChange}/>
-                    <TextField sx={StyledTextfield} fullWidth label="Apellido" variant="outlined" value={apellido} onChange={handlerApellido} onKeyUp={handlerChange}/>
-                    <TextField sx={StyledTextfield} fullWidth label="Correo" variant="outlined" value={correo} onChange={handlerCorreo} onKeyUp={handlerChange}/>
+            <Grid item sx={12} md={8}>
+                <TextField sx={StyledTextfield}  label="Nombre" variant="outlined" value={nombre} onChange={handlerNombre} onKeyUp={handlerChange}/>
+                <TextField sx={StyledTextfield}  label="Apellido" variant="outlined" value={apellido} onChange={handlerApellido} onKeyUp={handlerChange}/>
+                <TextField sx={StyledTextfield}  label="Correo" variant="outlined" value={correo} onChange={handlerCorreo} onKeyUp={handlerChange}/>
             </Grid>
             <Grid item xs={12} md={12} align="right" m={2}>
                 <Button disabled={buttonDisabled} color="secondary" variant="contained" endIcon={<UpdateIcon />}>

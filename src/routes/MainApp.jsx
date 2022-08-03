@@ -43,7 +43,7 @@ function MainContainer() {
              }else if(pageIndex === 7){
                  navigate("/FricheAdminApp/mobilePages");
              }
-             //TODO hacer 404 y redireccionar al inicio
+
 
      },[pageIndex]);
     return (

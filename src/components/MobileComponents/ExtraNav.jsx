@@ -9,10 +9,11 @@ import { Avatar, Divider, Grid, List, ListItem, ListItemAvatar, ListItemText, St
     const StyledGrid = {
         backgroundColor:"background.paper",
         borderRadius:"20px",
-        animation: 'fade-in ease 0.5s',
+        animation: 'fade-in-down ease 0.5s',
         display: 'flex',
         height:"100%",
         flexDirection:"column",
+        animation: 'fade-in-down ease 0.5s',
     }
     const StyledList = {width:"100%"}
     const StyledText ={color:"text.accent"}

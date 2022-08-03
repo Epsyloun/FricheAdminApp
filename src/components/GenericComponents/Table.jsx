@@ -72,7 +72,7 @@ function TableComponent({columns, rows}) {
                     .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                     .map((row) => {
                     return (
-                        <StyledTableRow hover role="checkbox" tabIndex={-1} key={row.code}>
+                        <StyledTableRow hover tabIndex={-1} key={row.id}>
                         {columns.map((column) => {
                             const value = row[column.id];
                             return (

@@ -2,6 +2,7 @@ import React from 'react';
 import {Buscador} from '../components/GenericComponents/Buscador';
 import {TableComponent} from '../components/GenericComponents/Table';
 import { Title } from '../components/GenericComponents/Title';
+import { PedidosArray } from '../components/PedidosComponent/PedidosArray';
 function PedidosContainer() {
 
     function createData(nombre, fecha, total ) {
@@ -13,11 +14,12 @@ function PedidosContainer() {
         { id: 'total', label: 'Total'},
       ];
 
-        const rows = [
-          createData('Nombre1', '15/07/22', '$22.50'),
-          createData('Nombre2', '15/07/22', '$22.50'),
-          createData('Nombre3', '15/07/22', '$22.50'),
-    ];
+    const newRow = PedidosArray()
+    const sendRow = []
+    newRow.map((row)=>{
+        sendRow.push(createData(row.nombre, row.fecha, row.monto))
+    })
+
 
     return (
         <>
@@ -27,7 +29,7 @@ function PedidosContainer() {
             <Buscador/>
             <TableComponent
                 columns={columns}
-                rows={rows}
+                rows={sendRow}
             />
         </>
          );
