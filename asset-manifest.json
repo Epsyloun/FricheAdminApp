@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/FricheAdminApp/static/css/main.81a51cf2.css",
-    "main.js": "/FricheAdminApp/static/js/main.ee5c57cf.js",
+    "main.js": "/FricheAdminApp/static/js/main.e61f28cc.js",
     "index.html": "/FricheAdminApp/index.html",
     "main.81a51cf2.css.map": "/FricheAdminApp/static/css/main.81a51cf2.css.map",
-    "main.ee5c57cf.js.map": "/FricheAdminApp/static/js/main.ee5c57cf.js.map"
+    "main.e61f28cc.js.map": "/FricheAdminApp/static/js/main.e61f28cc.js.map"
   },
   "entrypoints": [
     "static/css/main.81a51cf2.css",
-    "static/js/main.ee5c57cf.js"
+    "static/js/main.e61f28cc.js"
   ]
 }
