@@ -19,7 +19,7 @@ const useThemeDetector = () => {
     return isDarkTheme;
 }
 
-function useTheme() {
+function useThemeHook() {
     const isDarkTheme = useThemeDetector();
     const [themeColor, setThemeColor] = useState(isDarkTheme ? "dark": "light");
     useEffect(()=>{
@@ -77,4 +77,4 @@ function useTheme() {
     return theme;
 }
 
-export {useTheme};
+export {useThemeHook};

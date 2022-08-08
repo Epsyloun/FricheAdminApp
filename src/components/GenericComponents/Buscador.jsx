@@ -6,8 +6,7 @@ function Buscador() {
 
     const StyledPaper = {
         borderRadius:'20px',
-        marginTop:"0.5em",
-        padding:'2%',
+        marginBottom:'1.5em',
         backgroundColor:'background.default'
     }
     const OptionArray = ['Todo','Mayor a menor','Menor a mayor','Alfabetico','Ultima deuda']

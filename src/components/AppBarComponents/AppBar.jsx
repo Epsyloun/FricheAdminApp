@@ -14,7 +14,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import {Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Stack } from '@mui/material';
 import {UserInfoNav} from './UserInfoNav';
-import { useTheme } from '../../hooks/useTheme';
+import { useThemeHook } from '../../hooks/useTheme';
 
 
   //AppBar config
@@ -36,7 +36,7 @@ import { useTheme } from '../../hooks/useTheme';
   //Appbar function
   function AppBarNav({pageIndex,setPageIndex}) {
 
-    const theme = useTheme();
+    const theme = useThemeHook();
 
     const useStyles = makeStyles({
       paper: {

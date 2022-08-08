@@ -2,7 +2,7 @@ import React from 'react';
 import {Buscador} from '../components/GenericComponents/Buscador';
 import {TableComponent} from '../components/GenericComponents/Table';
 import { Title } from '../components/GenericComponents/Title';
-import { PedidosArray } from '../components/PedidosComponent/PedidosArray';
+import { PedidosArray } from '../components/PedidosComponents/PedidosArray';
 function PedidosContainer() {
 
     function createData(nombre, fecha, total ) {

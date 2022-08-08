@@ -1,5 +1,5 @@
 import React from 'react'
-import {VentaModal} from '../Venta/VentaModal';
+import {VentaModal} from '../VentaComponents/VentaModal';
 
 function ModalVenta({open, setOpen}) {
 

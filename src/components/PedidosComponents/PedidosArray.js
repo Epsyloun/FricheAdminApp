@@ -1,5 +1,3 @@
-import React from 'react';
-
 function PedidosArray() {
         const rows = [
           {nombre:'Nombre1',fecha:'14/07/22',monto:'$22.50',id:1},

@@ -9,37 +9,16 @@ import Button from '@mui/material/Button';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import SwipeableViews from 'react-swipeable-views';
-import { autoPlay } from 'react-swipeable-views-utils';
+import { GraficosTemplate } from './GraficosTemplate';
+import { GraficosCard } from './GraficosCard';
+import { Container } from '@mui/system';
 
-const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
-const images = [
-  {
-    label: 'San Francisco – Oakland Bay Bridge, United States',
-    imgPath:
-      'https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60',
-  },
-  {
-    label: 'Bird',
-    imgPath:
-      'https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60',
-  },
-  {
-    label: 'Bali, Indonesia',
-    imgPath:
-      'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250',
-  },
-  {
-    label: 'Goč, Serbia',
-    imgPath:
-      'https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=400&h=250&q=60',
-  },
-];
+function SliderGraficos({name, data}) {
 
-function SliderMedia() {
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
-  const maxSteps = images.length;
+  const maxSteps = data.length;
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -53,72 +32,87 @@ function SliderMedia() {
     setActiveStep(step);
   };
 
+
   return (
-    <Box sx={{ maxWidth: 400, flexGrow: 1 }}>
+    <Box key={name+'box'} sx={{ maxWidth: '100%', flexGrow: 1 }}>
       <Paper
         square
         elevation={0}
         sx={{
           display: 'flex',
           alignItems: 'center',
-          height: 50,
-          pl: 2,
+          justifyContent:'center',
+          height: 'auto',
+          marginBottom:'0.5em',
           bgcolor: 'background.default',
         }}
       >
-        <Typography>{images[activeStep].label}</Typography>
+      <Typography variant="h5">{data[activeStep].label}</Typography>
       </Paper>
-      <AutoPlaySwipeableViews
+      <SwipeableViews
         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
         index={activeStep}
         onChangeIndex={handleStepChange}
         enableMouseEvents
       >
-        {images.map((step, index) => (
+        {data.map((step, index) => (
           <div key={step.label}>
             {Math.abs(activeStep - index) <= 2 ? (
-              <Box
-                component="img"
+              <Container>
+                <Box
+                key={name+index+'list'}
                 sx={{
-                  height: 255,
+                  height: '50vh',
                   display: 'block',
-                  maxWidth: 400,
+                  maxWidth: '100%',
                   overflow: 'hidden',
                   width: '100%',
                 }}
-                src={step.imgPath}
-                alt={step.label}
-              />
+                >
+                  <GraficosCard
+                    image={<GraficosTemplate
+                        type={data[index].type}
+                        data={data[index].allData}
+                        name={name+index}
+                        height='auto'
+                    />
+                    }
+                />
+                </Box>
+              </Container>
             ) : null}
           </div>
         ))}
-      </AutoPlaySwipeableViews>
+      </SwipeableViews>
       <MobileStepper
+
         steps={maxSteps}
         position="static"
+        variant='dots'
         activeStep={activeStep}
         nextButton={
           <Button
-            size="small"
+            sx={{border:'1px solid'}}
+            size="medium"
             onClick={handleNext}
             disabled={activeStep === maxSteps - 1}
           >
-            Next
+
             {theme.direction === 'rtl' ? (
-              <KeyboardArrowLeft />
+              <KeyboardArrowLeft/>
             ) : (
-              <KeyboardArrowRight />
+              <KeyboardArrowRight/>
             )}
           </Button>
         }
         backButton={
-          <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
+          <Button size="medium" onClick={handleBack} disabled={activeStep === 0} sx={{border:'1px solid'}}>
             {theme.direction === 'rtl' ? (
-              <KeyboardArrowRight />
+              <KeyboardArrowRight/>
             ) : (
-              <KeyboardArrowLeft />
+              <KeyboardArrowLeft/>
             )}
-            Back
+
           </Button>
         }
       />
@@ -126,4 +120,4 @@ function SliderMedia() {
   );
 }
 
-export {SliderMedia};
+export {SliderGraficos};

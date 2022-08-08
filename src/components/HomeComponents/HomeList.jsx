@@ -3,10 +3,10 @@ import React from 'react'
 import { HorizontalCard } from '../GenericComponents/HorizontalCard';
 import { VerticalCard } from '../GenericComponents/VerticalCard';
 import { GraficosTemplate } from '../GraficosComponents/GraficosTemplate';
-import { useTheme } from '../../hooks/useTheme';
+import { useThemeHook } from '../../hooks/useTheme';
 
  function HomeList() {
-  const colors = useTheme()
+  const colors = useThemeHook()
 
     const data = {
         labels: [
@@ -56,7 +56,7 @@ import { useTheme } from '../../hooks/useTheme';
           'Julio'
         ],
       datasets: [{
-        label: 'Suma de entas mensuales',
+        label: 'Suma de ventas mensuales',
         backgroundColor: colors.palette.secondary.main,
         borderColor: colors.palette.secondary.main,
         data: [5, 0, 5, 2, 20, 45, 30],
