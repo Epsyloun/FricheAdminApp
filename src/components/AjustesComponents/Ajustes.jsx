@@ -35,7 +35,7 @@ function Ajustes({oldNombre, oldApellido, oldCorreo}) {
 
 
     const [nombre, setNombre] = React.useState('Rodrigo');
-    const [apellido, setApellido] = React.useState('Diaz');
+    const [apellido, setApellido] = React.useState('Díaz');
     const [correo, setCorreo] = React.useState('rodrigo.diaz8b@gmail.com');
     const [buttonDisabled, setButtonDisabled] = React.useState(true);
 
