@@ -11,7 +11,7 @@ import Typography from '@mui/material/Typography';
         height:"100%",
         flexDirection:"column",
         borderRadius: '20px',
-        animation: 'fade-in-down ease 0.5s',
+        animation: 'fade-in ease 0.5s',
         '&:hover':{
         margin: '-3px',
         border: '3px solid',

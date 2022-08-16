@@ -16,7 +16,6 @@ const StyledBox = {
     alignItems:'center',
     width:'100%',
 }
-const StyledCardContent = {padding:'5%', flex: '1 1 auto'}
 
 const StyledInput = {
     textAlign:'center'
@@ -31,7 +30,7 @@ function InventarioCard({title, cantidad, precio, img}) {
         console.log('click');
     }
     return (
-        <Card className="styled-card" sx={StyledCard}>
+        <Card sx={StyledCard}>
             <Box sx={StyledBox}>
                 <Typography m="0.3em" component='div' variant="h4" align='center' color="text.primary">
                     {title}
@@ -42,7 +41,7 @@ function InventarioCard({title, cantidad, precio, img}) {
                     image={img}
                     alt="mani"
                 />
-                    <CardContent sx={StyledCardContent}>
+                    <CardContent>
                         <Typography component='div' variant="h6" align='center' color="text.primary">
                             Cantidad:
                         </Typography>
@@ -67,7 +66,7 @@ function InventarioCard({title, cantidad, precio, img}) {
                         />
                     </CardContent>
                 <CardActions>
-                    <Button variant='outlined' size="medium">Actualizar</Button>
+                    <Button color="secondary" variant='outlined' size="medium">Actualizar</Button>
                 </CardActions>
             </Box>
         </Card>

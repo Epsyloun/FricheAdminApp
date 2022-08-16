@@ -11,7 +11,7 @@ import { CardActionArea } from '@mui/material';
 //StyledComponents
     const StyledCard = {
             borderRadius: '20px',
-            animation: 'fade-in-down ease 0.5s',
+            animation: 'fade-in ease 0.5s',
             height:'100%',
             '&:hover':{
             margin: '-3px',

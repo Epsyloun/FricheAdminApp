@@ -45,7 +45,7 @@ function useThemeHook() {
                         paper:'white',
                         default:'whitesmoke',
                         container:'lavender',
-                        tableHead:'#8A2BE2'
+                        tableHead:'#9370DB'
                     },
                     shadow:{
                         main:'rgba(255, 99, 132,0.6)'
@@ -65,7 +65,8 @@ function useThemeHook() {
                     background:{
                         paper:'#270c35',
                         default:'#1e1e1e',
-                        container:'#270c35'
+                        container:'#270c35',
+                        tableHead:'#3A2147'
                     },
                     shadow:{
                         main:'rgba(255, 99, 132,0.6)'

@@ -11,8 +11,7 @@ function Footer() {
         width: '100%',
     }
     const StyledSecondaryBox ={
-        width: '100%',
-        backgroundColor: 'pink',
+        width: '100%'
     }
 
     return (

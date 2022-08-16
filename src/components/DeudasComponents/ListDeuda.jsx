@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid } from '@mui/material';
 import {CardDeuda} from './CardDeuda';
-import {DeudasArray} from './DeudasArray'
+import {DeudasArray} from '../GenericComponents/infoExamples'
 
 function ListDeuda() {
     const Deudas = DeudasArray()

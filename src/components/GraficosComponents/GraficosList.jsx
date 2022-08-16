@@ -1,7 +1,7 @@
 import React from 'react'
 import { Divider, Grid, Typography } from '@mui/material';
 import { SliderGraficos } from './Slider';
-import {CobrosGraficosArray, FinanzasGraficosArray, InventarioGraficosArray, PedidosGraficosArray} from './GraficosArray'
+import {CobrosGraficosArray, FinanzasGraficosArray, InventarioGraficosArray, PedidosGraficosArray} from '../GenericComponents/infoExamples'
 
 //StyledComponent
 const StyledTypo={

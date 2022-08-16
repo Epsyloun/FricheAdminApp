@@ -4,7 +4,7 @@ import { Avatar, Card, CardActionArea, CardContent, Divider, Stack, Typography }
 //Styled Components
 const StyledCard = {
     borderRadius: '20px',
-    animation: 'fade-in-down ease 0.5s',
+    animation: 'fade-in ease 0.5s',
     height:'100%',
     '&:hover':{
     margin: '-3px',

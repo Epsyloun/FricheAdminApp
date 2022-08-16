@@ -11,7 +11,7 @@ import UpdateIcon from '@mui/icons-material/Update';
         flexDirection:"column",
         justifyContent:"center",
         alignItems:"center",
-        animation: 'fade-in-down ease 0.5s'
+        animation: 'fade-in ease 0.5s'
     }
     const StyledItemGrid={
         marginTop:"1.5em",
@@ -21,8 +21,8 @@ import UpdateIcon from '@mui/icons-material/Update';
         alignItems:"center"
     }
     const StyledTextfield = {
-        margin:"10px",
-        width:'94%'
+        marginTop:"10px",
+        marginBottom:"10px",
     }
     const StyledImage={
         width: '10em',
@@ -58,7 +58,8 @@ function Ajustes({oldNombre, oldApellido, oldCorreo}) {
     }
 
     return (
-        <Paper container sx={StyledGrid}>
+        <Paper >
+            <Grid container sx={StyledGrid}>
             <Grid item xs={12} md={4} sx={StyledItemGrid}>
                 <Avatar
                     alt="user image"
@@ -70,15 +71,16 @@ function Ajustes({oldNombre, oldApellido, oldCorreo}) {
                             <PhotoCamera />
                 </IconButton>
             </Grid>
-            <Grid item sx={12} md={8}>
-                <TextField sx={StyledTextfield}  label="Nombre" variant="outlined" value={nombre} onChange={handlerNombre} onKeyUp={handlerChange}/>
-                <TextField sx={StyledTextfield}  label="Apellido" variant="outlined" value={apellido} onChange={handlerApellido} onKeyUp={handlerChange}/>
-                <TextField sx={StyledTextfield}  label="Correo" variant="outlined" value={correo} onChange={handlerCorreo} onKeyUp={handlerChange}/>
+            <Grid m={1} item xs={12} md={8}>
+                <TextField sx={StyledTextfield} fullWidth  label="Nombre" variant="outlined" value={nombre} onChange={handlerNombre} onKeyUp={handlerChange}/>
+                <TextField sx={StyledTextfield} fullWidth  label="Apellido" variant="outlined" value={apellido} onChange={handlerApellido} onKeyUp={handlerChange}/>
+                <TextField sx={StyledTextfield} fullWidth  label="Correo" variant="outlined" value={correo} onChange={handlerCorreo} onKeyUp={handlerChange}/>
             </Grid>
-            <Grid item xs={12} md={12} align="right" m={2}>
+            <Grid item xs={12} md={12} align="center" m={2}>
                 <Button disabled={buttonDisabled} color="secondary" variant="contained" endIcon={<UpdateIcon />}>
                     Actualizar
                 </Button>
+            </Grid>
             </Grid>
         </Paper>
     );

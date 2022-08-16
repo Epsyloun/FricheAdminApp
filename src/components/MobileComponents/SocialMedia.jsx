@@ -7,7 +7,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
     const StyledGrid = {
         backgroundColor:"background.paper",
         borderRadius:"20px",
-        animation: 'fade-in-down ease 0.5s',
+        animation: 'fade-in ease 0.5s',
         display: 'flex',
         height:"100%",
         flexDirection:"column",

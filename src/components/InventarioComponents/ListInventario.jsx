@@ -1,8 +1,7 @@
 import React from 'react'
-import {SaladosArray, DulcesArray, PicantesArray} from './InventarioArray.js'
+import {SaladosArray, DulcesArray, PicantesArray} from '../GenericComponents/infoExamples'
 import {TabsInventario} from './Tabs'
-import { Grid, Typography } from '@mui/material';
-import {InventarioCard} from './InventarioCard'
+import { Typography } from '@mui/material';
 import Tabs from '@mui/material/Tabs';
 import { Box } from '@mui/system';
 import PropTypes from 'prop-types';
@@ -61,7 +60,7 @@ function ListInventario() {
     const arrayDulces = DulcesArray()
     const arrayPicantes = PicantesArray()
     return (
-        <Box sx={{ bgcolor: 'background.paper', width: 'auto' }}>
+        <Box sx={{ bgcolor: 'background.paper', width: 'auto', animation:'fade-in ease 0.5s', }}>
           <AppBar position="static">
             <Tabs
               value={value}
@@ -71,9 +70,9 @@ function ListInventario() {
               variant="fullWidth"
               aria-label="full width tabs example"
             >
-              <Tab label="Salados" {...a11yProps(0)} />
-              <Tab label="Dulces" {...a11yProps(1)} />
-              <Tab label="Picantes" {...a11yProps(2)} />
+              <Tab sx={{bgcolor:'background.tableHead', color:'white'}} label="Salados" {...a11yProps(0)} />
+              <Tab sx={{bgcolor:'background.tableHead', color:'white'}} label="Dulces" {...a11yProps(1)} />
+              <Tab sx={{bgcolor:'background.tableHead', color:'white'}} label="Picantes" {...a11yProps(2)} />
             </Tabs>
           </AppBar>
           <SwipeableViews

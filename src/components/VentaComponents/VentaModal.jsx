@@ -7,7 +7,7 @@ import SavingsOutlinedIcon from '@mui/icons-material/SavingsOutlined';
 import SavingsIcon from '@mui/icons-material/Savings';
 import CheckIcon from '@mui/icons-material/Check';
 import { Autocomplete, Button, Checkbox, FormControlLabel, Grid, TextField, Typography } from '@mui/material';
-import {DeudasArray} from '../DeudasComponents/DeudasArray'
+import {DeudasArray} from '../GenericComponents/infoExamples'
 
 function VentaModal({open, setOpen}) {
 //Datos de Deudas
@@ -15,11 +15,11 @@ function VentaModal({open, setOpen}) {
 
 //StyledComponents
     const CheckboxStyled={
-        color: 'primary.main',
+        color: 'secondary.main',
         display:'flex',
         justifyContent:'center',
         '&.Mui-checked': {
-        color: 'hotpink',
+        color: 'secondary.main',
         },
         '& .MuiSvgIcon-root': { fontSize: 40 }
     ,}
@@ -61,10 +61,10 @@ function VentaModal({open, setOpen}) {
             <Fade in={open}>
                 <Box sx={style}>
                     <form>
-                        <Typography color="text.primary" variant="h4" align="center">
+                        <Typography mb='1em' color="text.primary" variant="h4" align="center">
                             Nueva venta
                         </Typography>
-                        <Grid container spacing={1} sx={StyledPaper}>
+                        <Grid mb='1em' container spacing={1} sx={StyledPaper}>
                             <Grid item xs={12} md={8}>
                                 <Autocomplete
                                     disablePortal
@@ -74,7 +74,7 @@ function VentaModal({open, setOpen}) {
                                     renderInput={(params) => <TextField {...params} label="Nombre" />}
                                 />
                             </Grid>
-                            <Grid item xs={6} md={4}>
+                            <Grid mb='1em' item xs={6} md={4}>
                                 <TextField fullWidth label="Monto a pagar" />
                             </Grid>
                             <Grid item xs={12} md={12}>
@@ -93,7 +93,7 @@ function VentaModal({open, setOpen}) {
                             </Grid>
                         </Grid>
                         <Grid item xs={12} md={12} sx={StyledPaper}>
-                            <Button onClick={handleClose} variant="contained" endIcon={<CheckIcon />}>Finalizar</Button>
+                            <Button color='secondary' onClick={handleClose} variant="contained" endIcon={<CheckIcon />}>Finalizar</Button>
                         </Grid>
                     </form>
                 </Box>

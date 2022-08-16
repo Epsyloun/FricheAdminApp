@@ -8,7 +8,7 @@ import { styled } from '@mui/material/styles';
   const StyledPaper ={
     width: '100%',
     overflow: 'hidden',
-    animation: 'fade-in-down ease 0.5s'
+    animation: 'fade-in ease 0.5s'
   }
   const StyledTableContainer = { maxHeight: 'auto' }
 

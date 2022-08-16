@@ -15,13 +15,11 @@ import {AjustesPages} from '../pages/AjustesPages';
 import {MobilePages} from '../pages/MobilePages';
 import {AppBarContainer} from '../containers/AppBarContainer';
 import {FooterContainer} from '../containers/FooterContainer';
+import NotFound from '../pages/NotFound';
 
 
 function MainContainer() {
-    //Styled components
-
-    const StyledBigContainer = {backgroundColor:"background.container"}
-     //Menu handler
+    //Menu handler
      const [pageIndex, setPageIndex] = React.useState(0);
      let navigate = useNavigate();
      React.useEffect(()=>{
@@ -42,6 +40,8 @@ function MainContainer() {
                  navigate("/FricheAdminApp/ajustes");
              }else if(pageIndex === 7){
                  navigate("/FricheAdminApp/mobilePages");
+             }else{
+                navigate("*");
              }
 
 
@@ -60,6 +60,7 @@ function MainContainer() {
                             <Route path="/FricheAdminApp/inventario" element={<InventarioPages/>}/>
                             <Route path="/FricheAdminApp/ajustes" element={<AjustesPages/>}/>
                             <Route path="/FricheAdminApp/mobilePages" element={<MobilePages pageIndex={pageIndex} setPageIndex={setPageIndex}/>}/>
+                            <Route path="*" element={<NotFound/>}/>
                         </Routes>
                 </div>
                 <FooterContainer/>

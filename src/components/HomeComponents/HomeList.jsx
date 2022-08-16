@@ -64,7 +64,7 @@ import { useThemeHook } from '../../hooks/useTheme';
     };
 
     return (
-        <Grid container spacing={2} display="flex" alignItems="stretch" mt={0}>
+        <Grid container spacing={2} display="flex" alignItems="stretch">
             <Grid item xs={12} md={3}>
                 <HorizontalCard
                     image={'attach_money'}
@@ -86,7 +86,7 @@ import { useThemeHook } from '../../hooks/useTheme';
                 <HorizontalCard
                             image={'money_off'}
                             title={'Producto menos vendida'}
-                            info={'Salados'}
+                            info={'Paletas de chile'}
                             subtitle2={'0% de las ventas'}
                         />
 

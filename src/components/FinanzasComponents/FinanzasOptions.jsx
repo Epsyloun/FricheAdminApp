@@ -10,7 +10,7 @@ import { Box } from '@mui/system';
 
     const StyledCard = {
         borderRadius: '20px',
-        animation: 'fade-in-down ease 0.5s',
+        animation: 'fade-in ease 0.5s',
         display: 'flex',
         wrap:"wrap",
         height:"100%",
@@ -37,7 +37,7 @@ function FinanazasOptions() {
         <Card className="styled-card" sx={StyledCard}>
             <Box sx={StyledBox}>
                 <CardContent sx={StyledCardContent}>
-                <Typography color="hotpink" variant="h4" align="center" ml="2%">
+                <Typography color="secondary.main" variant="h4" align="center" ml="2%">
                     Dinero en caja
                 </Typography>
                 <TextField
