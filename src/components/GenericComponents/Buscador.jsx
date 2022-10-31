@@ -1,5 +1,6 @@
 import React from 'react'
-import { Autocomplete, Grid, TextField} from '@mui/material';
+import { Autocomplete, Button, Grid, TextField} from '@mui/material';
+import AddIcon from '@mui/icons-material/Add';
 
 function Buscador() {
     //Styled Components
@@ -12,7 +13,7 @@ function Buscador() {
     const OptionArray = ['Todo','Mayor a menor','Menor a mayor','Alfabetico','Ultima deuda']
     return (
             <Grid container spacing={1} sx={StyledPaper}>
-                <Grid item xs={4}>
+                <Grid item md={4} xs={12}>
                     <Autocomplete
                         disablePortal
                         id="combo-box-deudas"
@@ -21,11 +22,14 @@ function Buscador() {
                         renderInput={(params) => <TextField {...params} label="Filtro" />}
                     />
                 </Grid>
-                <Grid item xs={8}>
+                <Grid item md={6} xs={8}>
                     <TextField fullWidth={true} id="outlined-basic" label="Nombre" variant="outlined" />
                 </Grid>
+                <Grid item md={2} xs={4}>
+                    <Button startIcon={<AddIcon />} sx={{height:'100%'}} fullWidth={true} variant="outlined">Nuevo</Button>
+                </Grid>
             </Grid>
-     );
+    );
 }
 
 export {Buscador};

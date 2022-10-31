@@ -1,76 +1,69 @@
-const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-const config = {
-  entry: [
-    'react-hot-loader/patch',
-    './src/index.js'
-  ],
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[contenthash].js'
-  },
-  resolve: {
-    extensions: ['.js', '.jsx']
-  },
-  module: {
-    rules: [
-      {
-        test: /\.(js|jsx)$/,
-        use: 'babel-loader',
-        exclude: /node_modules/
-      },
-      {
-        test: /\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader'
-        ]
-      }
-    ]
-  },
-  devServer: {
-    'static': {
-      directory: './dist'
-    }
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './public/index.html',
-      filename: 'index.html',
-    }),
-    new MiniCssExtractPlugin(),
-    new CleanWebpackPlugin()
-  ],
-  optimization: {
-    minimize: true,
-    runtimeChunk: 'single',
-    minimizer: [
-      new CssMinimizerPlugin(),
-      new TerserPlugin(),
-    ],
-    splitChunks: {
-      cacheGroups: {
-        vendor: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendors',
-          chunks: 'all'
-        }
-      }
-    }
-  }
-};
-
-module.exports = (env, argv) => {
-  if (argv.hot) {
-    // Cannot use 'contenthash' when hot reloading is enabled.
-    config.output.filename = '[name].[hash].js';
-  }
-
-  return config;
-};
+module.exports = {
+	entry: './src/index.js',
+	output: {
+		path: path.resolve(__dirname, 'dist'),
+		filename: 'bundle.js',
+	},
+	mode: 'production',
+	mode:'development',
+	resolve: {
+		extensions: ['.js', '.jsx'],
+		alias: {
+			'@components': path.resolve(__dirname, 'src/components/'),
+			'@containers': path.resolve(__dirname, 'src/containers/'),
+			'@pages': path.resolve(__dirname, 'src/pages/'),
+			'@routes': path.resolve(__dirname, 'src/routes/'),
+			'@styles': path.resolve(__dirname, 'src/styles/'),
+			'@icons': path.resolve(__dirname, 'src/assets/icons/'),
+			'@logos': path.resolve(__dirname, 'src/assets/logos/'),
+			'@images': path.resolve(__dirname, 'src/assets/images/'),
+		},
+	},
+	module: {
+		rules: [
+			{
+				test: /\.(js|jsx)$/,
+				exclude: /node_modules/,
+				use: {
+					loader: 'babel-loader'
+				}
+			},
+			{
+				test: /\.html$/,
+				use: [
+					{
+						loader: 'html-loader'
+					}
+				]
+			},
+			{
+				test: /\.(css|scss)$/,
+				use: [
+					"style-loader",
+					"css-loader",
+					"sass-loader",
+				],
+			},
+			{
+				test: /\.(png|svg|jpg|jpeg|gif)$/,
+				type: 'asset'
+			}
+		]
+	},
+	plugins: [
+		new HtmlWebpackPlugin({
+			template: './public/index.html',
+			filename: './index.html'
+		}),
+		new MiniCssExtractPlugin({
+			filename: '[name].css'
+		}),
+],
+	devServer: {
+		historyApiFallback: true,
+	}
+}
