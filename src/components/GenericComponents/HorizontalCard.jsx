@@ -17,7 +17,7 @@ import { CardActionArea } from '@mui/material';
             margin: '-3px',
             border: '3px solid',
             borderColor: 'secondary.main',
-          }
+        }
     }
     const StyledActionCard = {
         display: 'flex',

@@ -1,35 +1,59 @@
-import React from 'react'
-import { Autocomplete, Button, Grid, TextField} from '@mui/material';
-import AddIcon from '@mui/icons-material/Add';
+import React from "react";
+import {Button, Grid, InputAdornment, TextField } from "@mui/material";
+import AddIcon from "@mui/icons-material/Add";
+import SearchIcon from '@mui/icons-material/Search';
 
-function Buscador() {
-    //Styled Components
+function Buscador({ setOpenEoD,setOpen, search, setSearch }) {
+  //Styled Components
+  const StyledPaper = {
+    justifyContent: "center",
+    borderRadius: "20px",
+    marginBottom: "1.5em",
+    backgroundColor: "background.default",
+  };
 
-    const StyledPaper = {
-        borderRadius:'20px',
-        marginBottom:'1.5em',
-        backgroundColor:'background.default'
-    }
-    const OptionArray = ['Todo','Mayor a menor','Menor a mayor','Alfabetico','Ultima deuda']
-    return (
-            <Grid container spacing={1} sx={StyledPaper}>
-                <Grid item md={4} xs={12}>
-                    <Autocomplete
-                        disablePortal
-                        id="combo-box-deudas"
-                        options={OptionArray}
-                        width="auto"
-                        renderInput={(params) => <TextField {...params} label="Filtro" />}
-                    />
-                </Grid>
-                <Grid item md={6} xs={8}>
-                    <TextField fullWidth={true} id="outlined-basic" label="Nombre" variant="outlined" />
-                </Grid>
-                <Grid item md={2} xs={4}>
-                    <Button startIcon={<AddIcon />} sx={{height:'100%'}} fullWidth={true} variant="outlined">Nuevo</Button>
-                </Grid>
-            </Grid>
-    );
+  function handleChange(e) {
+    setSearch(e.target.value);
+  }
+
+  function handleOpen() {
+    setOpen(true);
+    setOpenEoD(false);
+  }
+
+  return (
+    <Grid container spacing={1} sx={StyledPaper}>
+      <Grid item md={8} xs={8}>
+        <TextField
+          fullWidth={true}
+          id="outlined-basic"
+          label="Buscar"
+          value={search}
+          onChange={handleChange}
+          name="search"
+          variant="outlined"
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <SearchIcon />
+              </InputAdornment>
+            ),
+          }}
+        />
+      </Grid>
+      <Grid item md={2} xs={4}>
+        <Button
+          onClick={handleOpen}
+          startIcon={<AddIcon />}
+          sx={{ height: "100%" }}
+          fullWidth={true}
+          variant="outlined"
+        >
+          Nuevo
+        </Button>
+      </Grid>
+    </Grid>
+  );
 }
 
-export {Buscador};
+export { Buscador };

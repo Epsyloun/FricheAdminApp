@@ -1,3 +1,8 @@
+/*Estilizando datepicker*/
+.MuiFormControl-root{
+  width: 100%;
+}
+
 /*diseño por breakpoints*/
 @media only screen and (max-width: 600px) {
   .only-mobile-footer{

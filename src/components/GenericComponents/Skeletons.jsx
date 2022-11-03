@@ -87,36 +87,7 @@ function LoaderDeudas() {
     <>
       <Grid sx={StyledGrid}>
         <Grid container spacing={2}>
-          <Grid item md={4} xs={12}>
-            <Stack width={"100%"}>
-              <Skeleton
-                animation="wave"
-                variant="rectangular"
-                height={"3.5em"}
-              />
-            </Stack>
-          </Grid>
-          <Grid item md={6} xs={8}>
-            <Stack width={"100%"}>
-              <Skeleton
-                animation="wave"
-                variant="rectangular"
-                height={"3.5em"}
-              />
-            </Stack>
-          </Grid>
-          <Grid item md={2} xs={4}>
-            <Stack width={"100%"}>
-              <Skeleton
-                animation="wave"
-                variant="rectangular"
-                height={"3.5em"}
-              />
-            </Stack>
-          </Grid>
-        </Grid>
-        <Grid container spacing={2} mt={1}>
-          <Grid item xs={12} md={4}>
+        <Grid item xs={12} md={4}>
             <Paper>
               <Stack width={"100%"} direction="row">
                 <Skeleton
@@ -144,7 +115,7 @@ function LoaderDeudas() {
               </Stack>
               <Stack sx={StyledFinalStack}>
                 <Skeleton
-                  sx={StyledSkeletonCircular}
+                  sx={StyledSkeletonFinalRectangular}
                   animation="wave"
                   variant="rectangular"
                   width={"6em"}
@@ -192,7 +163,7 @@ function LoaderDeudas() {
           </Grid>
           <Grid item xs={12} md={4}>
             <Paper>
-              <Stack width={"100%"} direction="row" mb={1}>
+              <Stack width={"100%"} direction="row">
                 <Skeleton
                   sx={StyledSkeletonCircular}
                   animation="wave"

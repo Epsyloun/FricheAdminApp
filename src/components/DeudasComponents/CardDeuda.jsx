@@ -27,10 +27,11 @@ const StyledCardContent = { padding: "5%", flex: "1 1 auto" };
 
 const StyledAvatar = { backgroundColor: "text.avatar", color: "white" };
 
-function CardDeuda({ initial, title, info, subtitle }) {
+function CardDeuda({setOpenEoD,setOpen, initial, title, info, subtitle }) {
   //Funcion para mostrar que se clickea la card
   function showOptions() {
-    console.log("click");
+    setOpen(false);
+    setOpenEoD(true);
   }
   return (
     <Card sx={StyledCard}>
