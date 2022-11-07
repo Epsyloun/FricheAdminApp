@@ -23,7 +23,7 @@ export const onGetCorreos = (callback) => {
   return unsub;
 };
 
-export const getCobros = () => getDocs(collection(db, collectionName));
+export const getCobros = (callback) => onSnapshot(collection(db, collectionName), callback);
 
 export const deleteCobros = (id) => deleteDoc(doc(db, collectionName, id));
 

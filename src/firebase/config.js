@@ -1,6 +1,18 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection } from "firebase/firestore"
+import { getFirestore } from "firebase/firestore"
 
+// //Base de datos de respaldo
+// // Your web app's Firebase configuration
+// const firebaseConfig = {
+//   apiKey: "AIzaSyAsA6nRjAqAuW61c5Q6qDLzpUhel-a3r7U",
+//   authDomain: "friche-admin-app-786e5.firebaseapp.com",
+//   projectId: "friche-admin-app-786e5",
+//   storageBucket: "friche-admin-app-786e5.appspot.com",
+//   messagingSenderId: "801001134809",
+//   appId: "1:801001134809:web:72dccfe0341200bd5d7cc8"
+// };
+
+// Base de datos
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyBUjMI96ghSPUsOp4VA8ZR5XkZCLCCpNQw",

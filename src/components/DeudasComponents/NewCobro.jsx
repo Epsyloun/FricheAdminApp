@@ -55,8 +55,9 @@ function NewCobro({ open, setOpen, openEoD, setOpenEoD}) {
   async function handleSubmit(e) {
     e.preventDefault();
     await saveCobros(addCobro);
-    console.log('new task added');
+    console.log('new task added');//TODO: añadir alert de que se agrego y luego cerrar el modal con then
     setAddCobro(initialState)
+    handleClose();
   }
 
   return (

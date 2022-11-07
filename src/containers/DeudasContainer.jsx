@@ -6,17 +6,39 @@ import { Title } from "../components/GenericComponents/Title";
 import { NewCobro } from "../components/DeudasComponents/NewCobro";
 
 function DeudasContainer() {
+  //Manejo de variables de Edit or Delete
+  const [deudaId, setDeudaId] = useState(0);
+
+  //Manejo de modals
   const [open, setOpen] = useState(false);
   const [openEoD, setOpenEoD] = useState(false);
-  const [searchCobro, setSearchCobro] = useState('');
+  const [searchCobro, setSearchCobro] = useState("");
 
   return (
     <>
       <Title titleText="Cobros" />
-      <Buscador setSearch={setSearchCobro} open={open} setOpen={setOpen} setOpenEoD={setOpenEoD} />
-      <ListDeuda searchValue={searchCobro} open={open} setOpen={setOpen} openEoD={openEoD} setOpenEoD={setOpenEoD}/>
+      <Buscador
+        setSearch={setSearchCobro}
+        open={open}
+        setOpen={setOpen}
+        setOpenEoD={setOpenEoD}
+      />
+      <ListDeuda
+        setDeudaId={setDeudaId}
+
+        searchValue={searchCobro}
+        open={open}
+        setOpen={setOpen}
+        openEoD={openEoD}
+        setOpenEoD={setOpenEoD}
+      />
       <NewCobro open={open} setOpen={setOpen} setOpenEoD={setOpenEoD} />
-      <EditOrDeleteDeuda openEoD={openEoD} setOpen={setOpen} setOpenEoD={setOpenEoD}/>
+      <EditOrDeleteDeuda
+        deudaId={deudaId}
+        openEoD={openEoD}
+        setOpen={setOpen}
+        setOpenEoD={setOpenEoD}
+      />
     </>
   );
 }
