@@ -1,105 +1,124 @@
-import React from 'react';
-import Backdrop from '@mui/material/Backdrop';
-import Box from '@mui/material/Box';
-import Modal from '@mui/material/Modal';
-import Fade from '@mui/material/Fade';
-import SavingsOutlinedIcon from '@mui/icons-material/SavingsOutlined';
-import SavingsIcon from '@mui/icons-material/Savings';
-import CheckIcon from '@mui/icons-material/Check';
-import { Autocomplete, Button, Checkbox, FormControlLabel, Grid, TextField, Typography } from '@mui/material';
-import {DeudasArray} from '../GenericComponents/infoExamples'
-
-function VentaModal({open, setOpen}) {
-//Datos de Deudas
-    const dataDeudas = DeudasArray()
-
-//StyledComponents
-    const CheckboxStyled={
-        color: 'secondary.main',
-        display:'flex',
-        justifyContent:'center',
-        '&.Mui-checked': {
-        color: 'secondary.main',
-        },
-        '& .MuiSvgIcon-root': { fontSize: 40 }
-    ,}
-
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-
-  const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: '80%',
-    backgroundColor: 'background.paper',
-    borderRadius:"20px",
-    boxShadow: 24,
-    p: 4,
-  };
-  const StyledPaper = {
-    display:"flex",
-    justifyContent:"center"
+import {
+    Accordion,
+    AccordionDetails,
+    AccordionSummary,
+    Box,
+    Button,
+    Divider,
+    Grid,
+    Modal,
+    Paper,
+    Typography,
+  } from "@mui/material";
+  import React, { useState, useEffect } from "react";
+  import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+  import { AccordionNew } from "./AccordionNew";
+  import {DataCliente, DataFecha, DataProductos, DataTotal} from './DataAccordion'
+  import { isEmpty } from "@firebase/util";
+  import { getOneRegister, saveNewRegister, updateRegister } from "../../firebase/api";
+  import CheckIcon from '@mui/icons-material/Check';
+  import Swal from "sweetalert2";
+  import { useTheme } from "@emotion/react";
+  import { useNavigate } from "react-router-dom";
+  
+  function NewPedido({collectionName, setOpen}) {
+  
+    const StyledAnimation ={
+      animation: 'fade-in ease 0.5s'
     }
-    const OptionArray = []
-    for (let i = 0; i < dataDeudas.length; i++) {
-        OptionArray.push(dataDeudas[i].nombre)
+  
+      let navigate = useNavigate();
+  
+      //Inicializando el tema de colores de la app
+      const theme = useTheme();
+  
+    const [nombre, setNombre] = useState('');
+    const [cantidad, setCantidad] = useState(0);
+    const [carrito, setCarrito] = useState([]);
+    const [totalCarrito, setTotalCarrito] = useState(0);
+    const [fecha, setFecha] = useState(null);
+  
+    async function addPedido(e){
+      e.preventDefault();
+      let error = false;
+      let title = '';
+      let subtitle = '';
+      let newPedido = {}
+      if(!isEmpty(nombre) && nombre !== ''){
+        if(cantidad > 0 && carrito.length > 0){
+          if(fecha !== null){
+            newPedido = {'nombre':nombre,'items': carrito,'total': totalCarrito, 'fecha':fecha, 'estado': '0'}
+            await saveNewRegister(collectionName,newPedido);
+            Swal.fire({
+              title:'Pedido añadido',
+              icon:'success',
+              text:'Nuevo pedido añadido',
+              timer: 2000,
+              iconColor: theme.palette.text.icon,
+              color:theme.palette.text.accent,
+              background: theme.palette.background.paper,
+            }
+            ).then(
+              setNombre(''),
+              setCantidad(0),
+              setCarrito([]),
+              setTotalCarrito(0),
+              setFecha(null),
+              setOpen(false)
+            )
+          }else{error=true; title="Fecha incorrecta"; subtitle="Debe tomar una fecha"}
+        }else{error=true; title="Sin compras"; subtitle="Debe elegiralmenos un objeto del inventario para realizar el pedido"}
+      }else{error=true; title="Sin nombre"; subtitle="Debe llenar almenos el campo de nombre"}
+      if(error === true){
+        Swal.fire({
+          icon: 'error',
+          title: title,
+          text: subtitle,
+          iconColor: theme.palette.text.icon,
+          color:theme.palette.text.accent,
+          background: theme.palette.background.paper,
+        })
+      }
     }
+  
     return (
-        <Modal
-            aria-labelledby="transition-modal-title"
-                aria-describedby="transition-modal-description"
-                open={open}
-                onClose={handleClose}
-                closeAfterTransition
-                BackdropComponent={Backdrop}
-                BackdropProps={{
-                timeout: 500,
-                }}
-            >
-            <Fade in={open}>
-                <Box sx={style}>
-                    <form>
-                        <Typography mb='1em' color="text.primary" variant="h4" align="center">
-                            Nueva venta
-                        </Typography>
-                        <Grid mb='1em' container spacing={1} sx={StyledPaper}>
-                            <Grid item xs={12} md={8}>
-                                <Autocomplete
-                                    disablePortal
-                                    id="combo-box-deudas"
-                                    options={OptionArray}
-                                    width="auto"
-                                    renderInput={(params) => <TextField {...params} label="Nombre" />}
-                                />
-                            </Grid>
-                            <Grid mb='1em' item xs={6} md={4}>
-                                <TextField fullWidth label="Monto a pagar" />
-                            </Grid>
-                            <Grid item xs={12} md={12}>
-                            <FormControlLabel
-                                value="start"
-                                sx={CheckboxStyled}
-                                control={<Checkbox
-                                    icon={<SavingsOutlinedIcon />}
-                                    checkedIcon={<SavingsIcon />}
-
-                                    />
-                                }
-                                label="Añadir a deudas"
-                                labelPlacement="start"
-                                />
-                            </Grid>
-                        </Grid>
-                        <Grid item xs={12} md={12} sx={StyledPaper}>
-                            <Button color='secondary' onClick={handleClose} variant="contained" endIcon={<CheckIcon />}>Finalizar</Button>
-                        </Grid>
-                    </form>
-                </Box>
-            </Fade>
-        </Modal>
-     );
-}
-
-export {VentaModal};
+      <Paper sx={StyledAnimation}>
+        <form onSubmit={addPedido} autoComplete="off">
+          <AccordionNew
+            title={"Cliente:"}
+            subtitle={nombre}
+            number={1}
+            data={DataCliente(setNombre)}
+            width={'auto'}
+          />
+          <AccordionNew
+            title={"Productos:"}
+            subtitle={cantidad}
+            number={2}
+            data={DataProductos(setCantidad, cantidad, carrito, setCarrito)}
+            width={'auto'}
+          />
+          <AccordionNew
+            title={"Total:"}
+            subtitle={'$'+totalCarrito}
+            number={3}
+            data={DataTotal(carrito, setTotalCarrito)}
+            width={'auto'}
+          />
+          <AccordionNew
+            title={"Fecha de entrega:"}
+            subtitle={fecha}
+            number={4}
+            data={DataFecha(fecha, setFecha)}
+            width={'40%'}
+          />
+          <Grid p={2} container>
+            <Grid item xs={6} align="left"><Button variant="outlined" onClick={()=>{setOpen(false)}}>Regresar</Button></Grid>
+            <Grid item xs={6} align="right"><Button variant="contained" type="submit" endIcon={<CheckIcon />}>Guardar</Button></Grid>
+          </Grid>
+        </form>
+      </Paper>
+    );
+  }
+  
+  export { NewPedido };
